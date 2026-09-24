@@ -1,6 +1,6 @@
 # SPEC 04 — SEO avanzado: sitemap, JSON-LD y optimización para buscadores de IA
 
-> **Status:** Approved
+> **Status:** Implemented
 > **Depends on:** SPEC 02, SPEC 03
 > **Date:** 2026-09-24
 > **Objective:** Implementar SEO técnico avanzado con sitemap y robots dinámicos, JSON-LD estructurado y optimización para buscadores de IA (llms.txt) sobre el dominio canónico `https://novacad.com.mx/`.

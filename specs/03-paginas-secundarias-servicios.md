@@ -1,6 +1,6 @@
 # SPEC 03 — Páginas secundarias de servicios con template único
 
-> **Status:** Approved
+> **Status:** Implemented
 > **Depends on:** SPEC 01, SPEC 02
 > **Date:** 2026-09-24
 > **Objective:** Generar las 9 páginas secundarias de servicios vinculadas desde la home con el mismo diseño de las páginas de referencia (protesis-fija-zirconia.html y similares) usando un template único en rutas limpias `/servicios/[slug]`.

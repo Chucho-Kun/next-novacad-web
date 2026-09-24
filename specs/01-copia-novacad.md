@@ -1,6 +1,6 @@
 # SPEC 01 — Copia sitio NOVACAD a estructura AGENTS.md con recursos locales
 
-> **Status:** Approved
+> **Status:** Implemented
 > **Depends on:** —
 > **Date:** 2026-09-23
 > **Objective:** Replicar la home de https://ontechpro.com.mx/novacad/ y sus 10 sub-páginas de servicios en la estructura One Single Page de AGENTS.md, descargando imágenes, SVG y videos a public/images y adaptando el diseño a Tailwind v4/Geist.

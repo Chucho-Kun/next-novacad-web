@@ -1,6 +1,6 @@
 # SPEC 02 - Plan de reconstrucción fiel de NOVACAD
 
-> **Status:** Approved
+> **Status:** Implemented
 > **Depends on:** `specs/sol/master-prompt.md`  
 > **Reference:** https://ontechpro.com.mx/novacad/  
 > **Date:** 2026-09-23  
