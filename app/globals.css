@@ -77,6 +77,10 @@ video {
   scroll-margin-top: 8rem;
 }
 
+#quienes-somos { scroll-margin-top: 15rem; }
+#servicios { scroll-margin-top: 0rem; }
+#galeria { scroll-margin-top: 0rem; }
+
 .site-container {
   width: min(80vw, 1536px);
   margin-inline: auto;

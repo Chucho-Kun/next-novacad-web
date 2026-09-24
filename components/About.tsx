@@ -18,7 +18,7 @@ export default function About() {
               className="h-auto w-full rounded-[15px]"
             />
           </div>
-          <div className="mt-3.75 space-y-5 text-justify text-base leading-5 lg:mt-5.5 lg:space-y-5.5 lg:text-[17px] lg:leading-5.5">
+          <div className="mt-3.75 space-y-5 text-base leading-5 lg:mt-5.5 lg:space-y-5.5 lg:text-[17px] lg:leading-5.5">
             <p>
               Somos un laboratorio dental especializado en prótesis de alta calidad, impulsado por tecnología de vanguardia y
               un equipo de expertos comprometidos con la excelencia.
