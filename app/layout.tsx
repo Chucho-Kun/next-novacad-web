@@ -17,16 +17,20 @@ const agency = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ontechpro.com.mx/novacad/"),
+  metadataBase: new URL("https://novacad.com.mx/"),
   title: "NOVACAD | Laboratorio Dental CAD/CAM - Prótesis Precisas",
   description:
     "Laboratorio dental con tecnología CAD/CAM. Prótesis de alta calidad: Zirconia, E-Max, PMMA, diseño de sonrisa. Innovación digital, sonrisa natural.",
+  alternates: {
+    canonical: "https://novacad.com.mx/",
+  },
   openGraph: {
     title: "NOVACAD | Laboratorio Dental CAD/CAM - Prótesis Precisas",
     description:
       "Laboratorio dental con tecnología CAD/CAM. Prótesis de alta calidad: Zirconia, E-Max, PMMA, diseño de sonrisa. Innovación digital, sonrisa natural.",
     type: "website",
     locale: "es_MX",
+    url: "https://novacad.com.mx/",
     images: [
       {
         url: "images/bg-logo-novacad-publish.jpg",

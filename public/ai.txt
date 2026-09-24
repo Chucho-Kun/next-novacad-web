@@ -1,0 +1,27 @@
+# NOVACAD
+
+Laboratorio dental con tecnología CAD/CAM. Prótesis de alta calidad: Zirconia, E-Max, PMMA, diseño de sonrisa. Innovación digital, sonrisa natural.
+
+NOVACAD es un laboratorio dental en México especializado en prótesis fijas, provisionales y diseño CAD/CAM. Ofrece restauraciones precisas, estéticas y biocompatibles mediante flujo digital.
+
+## Servicios
+
+- [Zirconia](https://novacad.com.mx/servicios/zirconia): Restauraciones de zirconia de alta resistencia, biocompatibles y estéticas. Sistema CAD/CAM libre de metal para coronas, puentes e implantes.
+- [E-Max](https://novacad.com.mx/servicios/e-max): Cerámica E-max de disilicato de litio para coronas, carillas y puentes con translucidez natural y alta estética en sector anterior.
+- [PMMA](https://novacad.com.mx/servicios/pmma): Provisionales de PMMA fresado CAD/CAM: ligeros, precisos y estéticos para coronas, puentes e implantes durante la transición al definitivo.
+- [Resina Híbrida](https://novacad.com.mx/servicios/resina-hibrida): Resina híbrida CAD/CAM con matriz resinosa y partículas cerámicas: flexibilidad, absorción de carga y estética para sectores posteriores.
+- [Diseño de Sonrisa](https://novacad.com.mx/servicios/diseno-de-sonrisa): Planificación digital de sonrisa: análisis facial y propuesta estética personalizada para visualizar el resultado antes del tratamiento definitivo.
+- [Mock up](https://novacad.com.mx/servicios/mock-up): Mock-up dental: simulación provisional en boca para validar forma, proporción y armonía facial antes de las restauraciones definitivas.
+- [Alineadores](https://novacad.com.mx/servicios/alineadores): Alineadores transparentes removibles: corrección progresiva de apiñamiento y espacios con planificación digital y máxima discreción.
+- [Guardas Oclusales](https://novacad.com.mx/servicios/guardas-oclusales): Guardas oclusales digitales para bruxismo y protección protésica: adaptación precisa, estabilidad oclusal y prevención del desgaste dental.
+- [Guías Quirúrgicas](https://novacad.com.mx/servicios/guias-quirurgicas): Guías quirúrgicas personalizadas para implantes: planificación tomográfica y precisión milimétrica en posición, angulación y profundidad.
+
+## Contacto
+
+- Email: novacad.social@gmail.com
+- Dirección: Cerezo 77A Boulevares Impala, 55040
+- Sitio: https://novacad.com.mx/
+
+## Idioma
+
+Idioma: es-MX

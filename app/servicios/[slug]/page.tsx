@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import { serviceCategories } from "@/data/services";
 
 type Props = {
@@ -27,9 +28,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = findService(slug);
   if (!service) return {};
+  const canonical = `https://novacad.com.mx/servicios/${slug}`;
   return {
     title: service.metaTitle,
     description: service.metaDescription,
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      title: service.metaTitle,
+      description: service.metaDescription,
+      url: canonical,
+      type: "website",
+      locale: "es_MX",
+      images: [
+        {
+          url: "https://novacad.com.mx/images/bg-logo-novacad-publish.jpg",
+          width: 1200,
+          height: 630,
+          alt: service.alt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: service.metaTitle,
+      description: service.metaDescription,
+      images: ["https://novacad.com.mx/images/bg-logo-novacad-publish.jpg"],
+    },
   };
 }
 
@@ -39,8 +65,48 @@ export default async function ServiceDetailPage({ params }: Props) {
 
   if (!service) notFound();
 
+  const canonical = `https://novacad.com.mx/servicios/${slug}`;
+  const baseUrl = "https://novacad.com.mx";
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Inicio",
+        item: `${baseUrl}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: service.title,
+        item: canonical,
+      },
+    ],
+  };
+
+  const serviceLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.metaDescription,
+    url: canonical,
+    provider: {
+      "@type": "Organization",
+      name: "NOVACAD",
+      url: `${baseUrl}/`,
+    },
+    areaServed: "MX",
+    image: `${baseUrl}${service.image}`,
+  };
+
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <>
+      <JsonLd data={breadcrumbLd} />
+      <JsonLd data={serviceLd} />
+      <div className="flex min-h-screen flex-col bg-white">
       {/* Barra superior azul */}
       <div className="bg-brand-deep">
         <div className="mx-auto flex w-[90vw] items-center py-4 lg:w-[80vw] lg:py-5">
@@ -163,6 +229,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       </main>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }
