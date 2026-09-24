@@ -1,54 +1,66 @@
+import Image from "next/image";
+import ContactForm from "@/components/ContactForm";
+
+const socialLinks = [
+  {
+    href: "https://www.facebook.com/profile.php?id=61585583129527#",
+    label: "Facebook",
+    icon: "/images/n-icono-fb.png",
+  },
+  { href: "https://www.instagram.com/novacadental/", label: "Instagram", icon: "/images/n-icono-insta.png" },
+  { href: "https://www.tiktok.com/@novacad.dental", label: "TikTok", icon: "/images/n-icono-tiktok.png" },
+  {
+    href: "https://wa.me/message/WGEHL6GIRQIVL1?src=qr",
+    label: "WhatsApp",
+    icon: "/images/n-icono-wa.png",
+  },
+];
+
 export default function Contact() {
   return (
-    <section id="contact" className="bg-zinc-900 py-20 text-white dark:bg-zinc-950 md:py-28">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-2">
-        <div>
-          <p className="text-xs font-semibold tracking-[0.3em] text-zinc-400">CONTACTO</p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight">Hablemos de tu proyecto</h2>
-          <p className="mt-4 max-w-md leading-7 text-zinc-400">
-            Contanos tu idea, medidas aproximadas y presupuesto estimado. Respondemos en menos de 24 horas.
-          </p>
-          <div className="mt-8 space-y-3 text-sm text-zinc-300">
-            <p>📍 Av. Ejemplo 1234, CABA — Buenos Aires</p>
-            <p>✉️ hola@novacad.com.ar</p>
-            <p>📞 +54 11 5555-0000</p>
-          </div>
+    <section id="contacto" className="bg-brand-blue px-[5vw] pt-5 text-white lg:px-[10vw] lg:pt-[34px]">
+      <h2 className="text-center text-[30px] leading-9 font-normal lg:text-[28px] lg:font-medium">Contacto</h2>
+      <div className="mt-[46px] flex w-[90vw] flex-wrap justify-center pb-5 lg:mt-[30px] lg:w-[80vw] lg:flex-nowrap lg:justify-start lg:pb-0">
+        <div className="flex w-[90vw] items-center justify-center px-5 lg:w-[26vw] lg:justify-start">
+          <Image
+            src="/images/n_logo_blanco_novacad.png"
+            alt="NOVACAD Laboratorios y Depósitos"
+            width={500}
+            height={97}
+            className="h-10 w-auto lg:h-auto lg:w-[24vw]"
+          />
         </div>
-        <form className="space-y-4 rounded-2xl bg-white p-6 text-zinc-900 dark:bg-zinc-900 dark:text-white">
-          <div className="grid gap-4 md:grid-cols-2">
-            <label className="space-y-2">
-              <span className="text-xs font-medium tracking-widest text-zinc-500">NOMBRE</span>
-              <input
-                type="text"
-                placeholder="Tu nombre"
-                className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm outline-none placeholder:text-zinc-400 focus:border-zinc-900 dark:border-zinc-800 dark:bg-black dark:focus:border-white"
-              />
-            </label>
-            <label className="space-y-2">
-              <span className="text-xs font-medium tracking-widest text-zinc-500">EMAIL</span>
-              <input
-                type="email"
-                placeholder="tu@email.com"
-                className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm outline-none placeholder:text-zinc-400 focus:border-zinc-900 dark:border-zinc-800 dark:bg-black dark:focus:border-white"
-              />
-            </label>
+        <div className="mt-10 w-[60vw] px-4 lg:mt-0 lg:w-[26vw] lg:px-5">
+          <h3 className="mb-3 text-xl leading-[30px] font-semibold">Síguenos</h3>
+          <div className="mb-[30px] flex gap-2.5">
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Abrir ${social.label} de NOVACAD`}
+              >
+                <Image src={social.icon} alt="" width={50} height={50} className="size-[35px]" />
+              </a>
+            ))}
           </div>
-          <label className="space-y-2">
-            <span className="text-xs font-medium tracking-widest text-zinc-500">MENSAJE</span>
-            <textarea
-              rows={4}
-              placeholder="Contanos sobre tu proyecto..."
-              className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm outline-none placeholder:text-zinc-400 focus:border-zinc-900 dark:border-zinc-800 dark:bg-black dark:focus:border-white"
-            />
-          </label>
-          <button
-            type="submit"
-            className="w-full rounded-full bg-zinc-900 py-3 text-sm font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-          >
-            Enviar consulta
-          </button>
-          <p className="text-center text-xs text-zinc-500">Respuesta garantizada en 24h hábiles.</p>
-        </form>
+          <h3 className="mb-3 text-xl leading-[30px] font-semibold">Teléfono</h3>
+          <a href="tel:+525662682487" className="mb-[30px] block text-base leading-[22px]">
+            56 6268 2487
+          </a>
+          <h3 className="mb-3 text-xl leading-[30px] font-semibold">Correo</h3>
+          <a href="mailto:novacad.social@gmail.com" className="mb-[30px] block text-base leading-[22px] underline">
+            novacad.social@gmail.com
+          </a>
+          <h3 className="mb-3 text-xl leading-[30px] font-semibold">Dirección</h3>
+          <address className="mb-[30px] text-base leading-[22px] not-italic">
+            Cerezo 77A, Boulevares Impala, 55040, Ecatepec de Morelos, Méx, México
+          </address>
+        </div>
+        <div className="mt-10 lg:mt-0">
+          <ContactForm />
+        </div>
       </div>
     </section>
   );

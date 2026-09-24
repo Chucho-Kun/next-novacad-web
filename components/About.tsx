@@ -1,36 +1,46 @@
+import Image from "next/image";
+
 export default function About() {
   return (
-    <section id="about" className="border-t border-zinc-100 bg-zinc-50 dark:border-zinc-900 dark:bg-zinc-950">
-      <div className="mx-auto grid max-w-6xl gap-16 px-6 py-20 md:grid-cols-2 md:py-28">
-        <div>
-          <p className="text-xs font-semibold tracking-[0.3em] text-zinc-400">SOBRE NOSOTROS</p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">
-            Estudio con base técnica y mirada contemporánea
+    <section id="quienes-somos" className="bg-white pt-10 pb-10 lg:pt-20">
+      <div className="mx-auto flex w-[90vw] flex-col items-center lg:w-[80vw] lg:flex-row lg:justify-between">
+        <div className="flex w-full flex-col lg:w-[40vw] lg:items-start">
+          <h2 className="text-center text-[30px] leading-9 font-normal max-[479px]:text-[25px] max-[479px]:leading-7.5 max-[479px]:font-bold lg:text-left lg:text-[28px] lg:font-medium">
+            ¿Quiénes Somos?
           </h2>
-        </div>
-        <div className="space-y-6 text-[15px] leading-7 text-zinc-600 dark:text-zinc-400">
-          <p>
-            En NOVACAD acompañamos cada proyecto de principio a fin: del anteproyecto a la entrega final. Creemos en una
-            arquitectura honesta, eficiente y duradera.
-          </p>
-          <p>
-            Nuestro equipo integra arquitectos, técnicos y proveedores locales para garantizar calidad constructiva, control de
-            costos y cumplimiento de plazos.
-          </p>
-          <div className="grid grid-cols-3 gap-6 pt-6">
-            <div>
-              <p className="text-2xl font-semibold text-zinc-900 dark:text-white">120+</p>
-              <p className="text-xs tracking-widest text-zinc-500">PROYECTOS</p>
-            </div>
-            <div>
-              <p className="text-2xl font-semibold text-zinc-900 dark:text-white">12</p>
-              <p className="text-xs tracking-widest text-zinc-500">AÑOS</p>
-            </div>
-            <div>
-              <p className="text-2xl font-semibold text-zinc-900 dark:text-white">98%</p>
-              <p className="text-xs tracking-widest text-zinc-500">SATISFACCIÓN</p>
-            </div>
+          <div className="mt-7.5 w-full lg:hidden">
+            <Image
+              src="/images/fotografia-lab-01.jpg"
+              alt="Instalaciones y equipo del laboratorio dental NOVACAD"
+              width={1128}
+              height={800}
+              sizes="90vw"
+              className="h-auto w-full rounded-[15px]"
+            />
           </div>
+          <div className="mt-3.75 space-y-5 text-justify text-base leading-5 lg:mt-5.5 lg:space-y-5.5 lg:text-[17px] lg:leading-5.5">
+            <p>
+              Somos un laboratorio dental especializado en prótesis de alta calidad, impulsado por tecnología de vanguardia y
+              un equipo de expertos comprometidos con la excelencia.
+            </p>
+            <p className="lg:hidden">
+              Usamos tecnología CAD/CAM e impresión 3D para fabricar prótesis dentales con máxima precisión.
+            </p>
+            <p className="hidden lg:block">
+              En NOVACAD, combinamos tecnología CAD/CAM de última generación, impresión 3D y experiencia clínica para ofrecer
+              calidad, rapidez y eficiencia en cada pieza dental que elaboramos.
+            </p>
+          </div>
+        </div>
+        <div className="hidden w-[40vw] justify-end lg:flex">
+          <Image
+            src="/images/fotografia-lab-01.jpg"
+            alt="Instalaciones y equipo del laboratorio dental NOVACAD"
+            width={1128}
+            height={800}
+            sizes="35vw"
+            className="h-auto w-[35vw] rounded-[15px]"
+          />
         </div>
       </div>
     </section>

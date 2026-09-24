@@ -1,38 +1,46 @@
+import Image from "next/image";
 import Link from "next/link";
+import MobileNav from "@/components/MobileNav";
 
-const nav = [
-  { href: "#about", label: "Nosotros" },
-  { href: "#services", label: "Servicios" },
-  { href: "#gallery", label: "Galería" },
-  { href: "#testimonials", label: "Testimonios" },
-  { href: "#contact", label: "Contacto" },
+export const navItems = [
+  { href: "#inicio", label: "Inicio" },
+  { href: "#quienes-somos", label: "Quiénes somos" },
+  { href: "#servicios", label: "Servicios" },
+  { href: "#galeria", label: "Galería" },
+  { href: "#contacto", label: "Contacto" },
 ];
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-100 bg-white/80 backdrop-blur dark:border-zinc-900 dark:bg-black/80">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="#" className="text-sm font-bold tracking-[0.2em] text-zinc-900 dark:text-white">
-          NOVACAD
+    <header className="relative z-50 bg-white">
+      <div className="hidden h-[14vh] min-h-24 max-h-30.5 items-center justify-between border-b-2 border-brand-blue px-[7vw] lg:flex">
+        <Link href="#inicio" aria-label="Ir al inicio de NOVACAD">
+          <Image
+            src="/images/n-logo-novacad.png"
+            alt="NOVACAD Laboratorios y Depósitos"
+            width={300}
+            height={58}
+            priority
+            className="h-auto w-50 2xl:w-78.5"
+          />
         </Link>
-        <nav className="hidden items-center gap-8 md:flex">
-          {nav.map((item) => (
+        <nav aria-label="Navegación principal" className="flex items-center gap-1">
+          {navItems.map((item, index) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+              className={
+                index === 0
+                  ? "rounded-[10px] bg-brand-cyan px-4 py-2.5 text-base font-normal text-white 2xl:text-[23px]"
+                  : "rounded-[10px] px-4 py-2.5 text-base font-medium text-black transition-colors hover:text-brand-blue 2xl:text-[23px]"
+              }
             >
               {item.label}
             </a>
           ))}
         </nav>
-        <a
-          href="#contact"
-          className="rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-        >
-          Cotizar
-        </a>
       </div>
+      <MobileNav items={navItems} />
     </header>
   );
 }
