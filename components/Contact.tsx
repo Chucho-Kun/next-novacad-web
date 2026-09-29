@@ -3,7 +3,7 @@ import ContactForm from "@/components/ContactForm";
 
 const socialLinks = [
   {
-    href: "https://www.facebook.com/profile.php?id=61585583129527#",
+    href: "https://www.facebook.com/profile.php?id=61585583129527",
     label: "Facebook",
     icon: "/images/n-icono-fb.png",
   },

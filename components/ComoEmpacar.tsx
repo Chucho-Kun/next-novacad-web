@@ -19,7 +19,7 @@ function PackagingImage({ number }: { number: number }) {
 export default function ComoEmpacar() {
   return (
     <section id="como-empacar" className="bg-brand-soft px-[5vw] py-[50px] lg:px-[10vw]">
-      <h2 className="text-center text-[30px] leading-9 font-normal lg:text-[28px] lg:font-medium">Como empacar</h2>
+      <h2 className="text-center text-[30px] leading-9 font-normal lg:text-[28px] lg:font-medium">Cómo empacar</h2>
       <div className="mx-auto mt-10 flex w-[80vw] items-end justify-between">
         {firstRow.map((number) => (
           <PackagingImage key={number} number={number} />

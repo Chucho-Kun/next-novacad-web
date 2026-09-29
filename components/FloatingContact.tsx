@@ -14,7 +14,7 @@ export default function FloatingContact() {
           alt=""
           width={60}
           height={60}
-          priority
+          loading="eager"
           className="size-[50px] lg:size-[70px]"
         />
       </a>
@@ -31,8 +31,6 @@ export default function FloatingContact() {
           width={60}
           height={60}
           loading="eager"
-          fetchPriority="high"
-          unoptimized
           className="size-[50px] lg:size-[70px]"
         />
       </a>

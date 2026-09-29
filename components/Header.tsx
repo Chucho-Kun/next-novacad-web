@@ -2,7 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import MobileNav from "@/components/MobileNav";
 
-export const navItems = [
+export type NavItem = {
+  href: string;
+  label: string;
+};
+
+export const navItems: NavItem[] = [
   { href: "#inicio", label: "Inicio" },
   { href: "#quienes-somos", label: "Quiénes somos" },
   { href: "#servicios", label: "Servicios" },

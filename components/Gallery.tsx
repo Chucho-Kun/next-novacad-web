@@ -20,6 +20,7 @@ export default function Gallery({ items, activeId, onSelect }: GalleryProps) {
             type="button"
             onClick={() => onSelect(item)}
             aria-pressed={activeId === item.id}
+            aria-label={`Ver ${item.title}`}
             className="flex h-[120px] w-[85vw] text-left lg:w-[29vw]"
           >
             <span className="relative h-[120px] w-[40vw] shrink-0 overflow-hidden bg-black lg:w-[13vw]">

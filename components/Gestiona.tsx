@@ -17,7 +17,7 @@ export default function Gestiona() {
             Gestiona tu trabajo
           </span>
           <span className="ml-[90px] self-start rounded-[20px] bg-white px-5 py-2.5 shadow-[0_2px_6px_rgb(0_0_0_/_0.28)] lg:ml-0 lg:self-center">
-            <Image src="/images/logo_vevi_dental.png" alt="Vevi Dental" width={367} height={130} className="h-10 w-auto" />
+            <Image src="/images/logo_vevi_dental.png" alt="Logotipo de Vevi Dental - plataforma para gestionar trabajos" width={367} height={130} className="h-10 w-auto" />
           </span>
         </a>
       </div>
