@@ -13,6 +13,12 @@ export const navItems = [
 export default function Header() {
   return (
     <header className="relative z-50 bg-white">
+      <a
+        href="#contenido"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-brand-deep focus:px-4 focus:py-2 focus:text-white"
+      >
+        Saltar al contenido
+      </a>
       <div className="hidden h-[14vh] min-h-24 max-h-30.5 items-center justify-between border-b-2 border-brand-blue px-[7vw] lg:flex">
         <Link href="#inicio" aria-label="Ir al inicio de NOVACAD">
           <Image
@@ -31,7 +37,7 @@ export default function Header() {
               href={item.href}
               className={
                 index === 0
-                  ? "rounded-[10px] bg-brand-cyan px-4 py-2.5 text-base font-normal text-white 2xl:text-[23px]"
+                  ? "rounded-[10px] bg-brand-blue px-4 py-2.5 text-base font-normal text-white 2xl:text-[23px]"
                   : "rounded-[10px] px-4 py-2.5 text-base font-medium text-black transition-colors hover:text-brand-blue 2xl:text-[23px]"
               }
             >

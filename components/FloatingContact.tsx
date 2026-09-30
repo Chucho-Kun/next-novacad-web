@@ -12,6 +12,7 @@ export default function FloatingContact() {
         <Image
           src="/images/n-2-icono-telefono.png"
           alt=""
+          aria-hidden="true"
           width={60}
           height={60}
           priority
@@ -22,12 +23,13 @@ export default function FloatingContact() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Contactar a NOVACAD por WhatsApp"
+        aria-label="Contactar a NOVACAD por WhatsApp (se abre en una pestaña nueva)"
         className="rounded-full"
       >
         <Image
           src="/images/n-2-icono-waf.png"
           alt=""
+          aria-hidden="true"
           width={60}
           height={60}
           loading="eager"

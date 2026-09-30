@@ -21,9 +21,11 @@ export default function ServiceCategoryCard({ category }: ServiceCategoryCardPro
     setActiveIndex((current) => (current + 1) % category.items.length);
   }
 
+  const headingId = `${category.slug}-titulo`;
+
   return (
-    <article className="w-[40vw] overflow-hidden rounded-xl border border-[#c7c7c7] bg-white pb-9 md:w-[34vw] lg:h-[calc(13.3vw+180px)] lg:max-h-[432px] lg:w-[19vw] lg:pb-5">
-      <div className="relative aspect-[10/7] w-full overflow-hidden rounded-t-xl bg-black">
+    <article aria-labelledby={headingId} className="w-[40vw] overflow-hidden rounded-xl border border-[#c7c7c7] bg-white pb-9 md:w-[34vw] lg:min-h-[calc(13.3vw+180px)] lg:w-[19vw] lg:pb-5">
+      <div role="group" aria-roledescription="carrusel" aria-label={`Imágenes de ${category.title}`} className="relative aspect-[10/7] w-full overflow-hidden rounded-t-xl bg-black">
         <Image
           key={activeItem.image}
           src={activeItem.image}
@@ -38,7 +40,7 @@ export default function ServiceCategoryCard({ category }: ServiceCategoryCardPro
           aria-label={`Mostrar imagen anterior de ${category.title}`}
           className="absolute inset-y-0 left-0 flex w-12 items-center justify-center text-white drop-shadow-md"
         >
-          <span aria-hidden className="block size-5 rotate-45 border-b-[3px] border-l-[3px] border-current" />
+          <span aria-hidden="true" className="block size-5 rotate-45 border-b-[3px] border-l-[3px] border-current" />
         </button>
         <button
           type="button"
@@ -46,19 +48,15 @@ export default function ServiceCategoryCard({ category }: ServiceCategoryCardPro
           aria-label={`Mostrar imagen siguiente de ${category.title}`}
           className="absolute inset-y-0 right-0 flex w-12 items-center justify-center text-white drop-shadow-md"
         >
-          <span aria-hidden className="block size-5 -rotate-45 border-r-[3px] border-b-[3px] border-current" />
+          <span aria-hidden="true" className="block size-5 -rotate-45 border-r-[3px] border-b-[3px] border-current" />
         </button>
+        <p aria-live="polite" aria-atomic="true" className="sr-only">
+          Imagen {activeIndex + 1} de {category.items.length}: {activeItem.title}
+        </p>
       </div>
       <div className="px-2 pt-5 text-center">
-        <h3 className="whitespace-nowrap text-[17px] leading-6 font-extrabold lg:text-[18px]">
-          {category.slug === "protesis-fija" ? (
-            <>
-              <span className="lg:hidden">Prótesis Fija</span>
-              <span className="hidden lg:inline">{category.title}</span>
-            </>
-          ) : (
-            category.title
-          )}
+        <h3 id={headingId} className="text-[17px] leading-6 font-extrabold text-balance lg:text-[18px]">
+          {category.title}
         </h3>
         <ul className="mt-4 space-y-3">
           {category.items.map((item) => (

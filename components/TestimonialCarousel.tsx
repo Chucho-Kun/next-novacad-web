@@ -10,11 +10,12 @@ type TestimonialCarouselProps = {
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <figure className="flex h-[180px] w-[38vw] shrink-0 flex-col justify-around rounded-[20px] bg-[#f1f1f1] px-5 py-2.5 lg:w-[24vw]">
-      <figcaption className="flex h-[50px] items-center justify-between gap-2">
+    <figure className="flex min-h-[180px] w-[38vw] shrink-0 flex-col justify-around rounded-[20px] bg-[#f1f1f1] px-5 py-2.5 lg:w-[24vw]">
+      <figcaption className="flex min-h-[50px] items-center justify-between gap-2">
         <Image
           src="/images/icono_persona.png"
           alt=""
+          aria-hidden="true"
           width={100}
           height={100}
           className="size-[25px] shrink-0 lg:size-10"
@@ -36,11 +37,13 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 export default function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) {
   const [mobilePage, setMobilePage] = useState(0);
   const [desktopPage, setDesktopPage] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const pointerStart = useRef<number | null>(null);
   const mobilePageCount = Math.ceil(testimonials.length / 2);
   const desktopPageCount = Math.ceil(testimonials.length / 3);
 
   useEffect(() => {
+    if (isPaused) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const interval = window.setInterval(() => {
@@ -49,7 +52,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
     }, 5000);
 
     return () => window.clearInterval(interval);
-  }, [desktopPageCount, mobilePageCount]);
+  }, [desktopPageCount, mobilePageCount, isPaused]);
 
   function handlePointerUp(event: React.PointerEvent, page: number, pageCount: number, setPage: (page: number) => void) {
     if (pointerStart.current === null) return;
@@ -62,15 +65,62 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
   function handleKeyDown(event: React.KeyboardEvent, page: number, pageCount: number, setPage: (page: number) => void) {
     if (event.key === "ArrowRight") setPage(Math.min(page + 1, pageCount - 1));
     if (event.key === "ArrowLeft") setPage(Math.max(page - 1, 0));
+    if (event.key === "Home") {
+      event.preventDefault();
+      setPage(0);
+    }
+    if (event.key === "End") {
+      event.preventDefault();
+      setPage(pageCount - 1);
+    }
+  }
+
+  function goPrev() {
+    setMobilePage((page) => Math.max(page - 1, 0));
+    setDesktopPage((page) => Math.max(page - 1, 0));
+  }
+
+  function goNext() {
+    setMobilePage((page) => Math.min(page + 1, mobilePageCount - 1));
+    setDesktopPage((page) => Math.min(page + 1, desktopPageCount - 1));
   }
 
   return (
-    <>
+    <div role="region" aria-roledescription="carrusel" aria-label="Testimonios de clientes">
+      <div className="mb-4 flex items-center justify-center gap-3">
+        <button
+          type="button"
+          onClick={goPrev}
+          aria-label="Mostrar testimonios anteriores"
+          className="flex size-6 items-center justify-center rounded-full border border-[#767676] text-lg leading-none text-[#333] focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:outline-none"
+        >
+          <span aria-hidden="true">‹</span>
+        </button>
+        <button
+          type="button"
+          onClick={() => setIsPaused((paused) => !paused)}
+          aria-pressed={isPaused}
+          aria-label={isPaused ? "Reanudar rotación de testimonios" : "Pausar rotación de testimonios"}
+          className="flex size-6 items-center justify-center rounded-full border border-[#767676] text-sm leading-none text-[#333] focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:outline-none"
+        >
+          <span aria-hidden="true">{isPaused ? "▶" : "⏸"}</span>
+        </button>
+        <button
+          type="button"
+          onClick={goNext}
+          aria-label="Mostrar testimonios siguientes"
+          className="flex size-6 items-center justify-center rounded-full border border-[#767676] text-lg leading-none text-[#333] focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:outline-none"
+        >
+          <span aria-hidden="true">›</span>
+        </button>
+      </div>
       <div className="lg:hidden">
         <div
           tabIndex={0}
-          aria-label="Carrusel de testimonios"
-          className="mx-auto w-[80vw] overflow-hidden"
+          role="group"
+          aria-roledescription="carrusel"
+          aria-label={`Carrusel de testimonios, página ${mobilePage + 1} de ${mobilePageCount}`}
+          className="mx-auto w-[80vw] overflow-hidden focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:outline-none"
           onPointerDown={(event) => (pointerStart.current = event.clientX)}
           onPointerUp={(event) => handlePointerUp(event, mobilePage, mobilePageCount, setMobilePage)}
           onKeyDown={(event) => handleKeyDown(event, mobilePage, mobilePageCount, setMobilePage)}
@@ -89,8 +139,10 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
       <div className="hidden lg:block">
         <div
           tabIndex={0}
-          aria-label="Carrusel de testimonios"
-          className="mx-auto w-[80vw] overflow-hidden"
+          role="group"
+          aria-roledescription="carrusel"
+          aria-label={`Carrusel de testimonios, página ${desktopPage + 1} de ${desktopPageCount}`}
+          className="mx-auto w-[80vw] overflow-hidden focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:outline-none"
           onPointerDown={(event) => (pointerStart.current = event.clientX)}
           onPointerUp={(event) => handlePointerUp(event, desktopPage, desktopPageCount, setDesktopPage)}
           onKeyDown={(event) => handleKeyDown(event, desktopPage, desktopPageCount, setDesktopPage)}
@@ -106,7 +158,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
         </div>
         <CarouselDots page={desktopPage} pageCount={desktopPageCount} setPage={setDesktopPage} />
       </div>
-    </>
+    </div>
   );
 }
 
@@ -118,9 +170,9 @@ function CarouselDots({ page, pageCount, setPage }: { page: number; pageCount: n
           key={index}
           type="button"
           onClick={() => setPage(index)}
-          aria-label={`Mostrar página ${index + 1} de testimonios`}
+          aria-label={`Mostrar página ${index + 1} de ${pageCount} de testimonios`}
           aria-current={page === index ? "true" : undefined}
-          className={`size-4 rounded-full ${page === index ? "bg-[#222]" : "bg-[#aaa]"}`}
+          className={`size-6 rounded-full focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:outline-none ${page === index ? "bg-[#222]" : "bg-[#767676]"}`}
         />
       ))}
     </div>

@@ -3,8 +3,8 @@ import { serviceCategories } from "@/data/services";
 
 export default function Services() {
   return (
-    <section id="servicios" className="bg-white px-[5vw] pt-5 pb-12.5 lg:px-[10vw] lg:pt-15 lg:pb-25">
-      <h2 className="text-center text-[30px] leading-9 font-normal max-[479px]:text-[25px] max-[479px]:leading-7.5 max-[479px]:font-bold lg:text-[28px] lg:font-medium">
+    <section id="servicios" aria-labelledby="servicios-titulo" className="bg-white px-[5vw] pt-5 pb-12.5 lg:px-[10vw] lg:pt-15 lg:pb-25">
+      <h2 id="servicios-titulo" className="text-center text-[30px] leading-9 font-normal max-[479px]:text-[25px] max-[479px]:leading-7.5 max-[479px]:font-bold lg:text-[28px] lg:font-medium">
         Nuestros servicios
       </h2>
       <p className="mx-auto mt-5 w-[90vw] text-justify text-base leading-5 lg:mt-7.5 lg:w-[80vw] lg:text-[17px] lg:leading-5.5">

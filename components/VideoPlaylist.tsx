@@ -9,18 +9,22 @@ export default function VideoPlaylist() {
 
   return (
     <div className="flex flex-col items-center gap-0 lg:flex-row lg:items-start lg:gap-[3vw]">
-      <div className="flex h-[476px] w-[90vw] items-center justify-center bg-black lg:w-[47vw]">
+      <div className="flex min-h-[476px] w-[90vw] items-center justify-center bg-black lg:w-[47vw]">
         <video
           key={activeProcedure.src}
           controls
-          preload="auto"
+          preload="metadata"
           aria-label={activeProcedure.title}
-          className="h-[476px] w-[267px] object-contain"
+          aria-describedby="video-actual-descripcion"
+          className="h-[476px] w-[267px] max-w-full object-contain focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:outline-none"
         >
           <source src={activeProcedure.src} type="video/mp4" />
           Tu navegador no soporta la reproducción de videos.
         </video>
       </div>
+      <p id="video-actual-descripcion" className="sr-only" aria-live="polite">
+        Reproduciendo: {activeProcedure.title}. Usa los botones de la galería para elegir otro procedimiento.
+      </p>
       <Gallery
         items={procedures.slice(0, 6)}
         activeId={activeProcedure.id}

@@ -62,7 +62,7 @@ export default function Home() {
       <div className="flex min-h-screen flex-col bg-white">
         <Header />
         <FloatingContact />
-        <main className="flex-1">
+        <main id="contenido" className="flex-1">
           <Hero />
           <WhyChoose />
           <About />

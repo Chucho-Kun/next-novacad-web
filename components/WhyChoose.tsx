@@ -12,20 +12,21 @@ export default function WhyChoose() {
       >
         ¿Por qué elegir NOVACAD?
       </h2>
-      <div className="mx-auto mt-12 flex w-full items-start justify-between lg:mt-15 lg:w-[54vw]">
+      <ul className="mx-auto mt-12 flex w-full list-none items-start justify-between p-0 lg:mt-15 lg:w-[54vw]">
         {whyChooseItems.map((item, index) => (
-          <div key={item.title} className={`flex ${mobileWidths[index]} flex-col items-center text-center lg:w-auto`}>
+          <li key={item.title} className={`flex ${mobileWidths[index]} flex-col items-center text-center lg:w-auto`}>
             <Image
               src={item.icon}
-              alt={item.alt}
+              alt=""
+              aria-hidden="true"
               width={120}
               height={120}
               className="h-10 w-auto object-contain lg:h-15.5"
             />
             <p className="mt-3.75 text-base leading-5.5 lg:text-[17px]">{item.title}</p>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

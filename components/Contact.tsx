@@ -18,8 +18,8 @@ const socialLinks = [
 
 export default function Contact() {
   return (
-    <section id="contacto" className="bg-brand-blue px-[5vw] pt-5 text-white lg:px-[10vw] lg:pt-[34px]">
-      <h2 className="text-center text-[30px] leading-9 font-normal lg:text-[28px] lg:font-medium">Contacto</h2>
+    <section id="contacto" aria-labelledby="contacto-titulo" className="bg-brand-blue px-[5vw] pt-5 text-white lg:px-[10vw] lg:pt-[34px]">
+      <h2 id="contacto-titulo" className="text-center text-[30px] leading-9 font-normal lg:text-[28px] lg:font-medium">Contacto</h2>
       <div className="mt-[46px] flex w-[90vw] flex-wrap justify-center pb-5 lg:mt-[30px] lg:w-[80vw] lg:flex-nowrap lg:justify-start lg:pb-0">
         <div className="flex w-[90vw] items-center justify-center px-5 lg:w-[26vw] lg:justify-start">
           <Image
@@ -40,17 +40,18 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Abrir ${social.label} de NOVACAD`}
+                className="rounded-[10px] focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-blue focus-visible:outline-none"
               >
-                <Image src={social.icon} alt="" width={50} height={50} className="size-[35px]" />
+                <Image src={social.icon} alt="" aria-hidden="true" width={50} height={50} className="size-[35px]" />
               </a>
             ))}
           </div>
           <h3 className="mb-3 text-xl leading-[30px] font-semibold">Teléfono</h3>
-          <a href="tel:+525662682487" className="mb-[30px] block text-base leading-[22px]">
+          <a href="tel:+525662682487" className="mb-[30px] block w-fit rounded text-base leading-[22px] focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-blue focus-visible:outline-none">
             56 6268 2487
           </a>
           <h3 className="mb-3 text-xl leading-[30px] font-semibold">Correo</h3>
-          <a href="mailto:novacad.social@gmail.com" className="mb-[30px] block text-base leading-[22px] underline">
+          <a href="mailto:novacad.social@gmail.com" className="mb-[30px] block w-fit rounded text-base leading-[22px] underline focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-blue focus-visible:outline-none">
             novacad.social@gmail.com
           </a>
           <h3 className="mb-3 text-xl leading-[30px] font-semibold">Dirección</h3>
