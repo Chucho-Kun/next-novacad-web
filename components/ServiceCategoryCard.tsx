@@ -22,8 +22,13 @@ export default function ServiceCategoryCard({ category }: ServiceCategoryCardPro
   }
 
   return (
-    <article className="w-[40vw] overflow-hidden rounded-xl border border-[#c7c7c7] bg-white pb-9 md:w-[34vw] lg:h-[calc(13.3vw+180px)] lg:max-h-[432px] lg:w-[19vw] lg:pb-5">
-      <div className="relative aspect-[10/7] w-full overflow-hidden rounded-t-xl bg-black">
+    <article className="w-[40vw] overflow-hidden rounded-xl border border-[#c7c7c7] bg-white pb-9 md:w-[34vw] lg:min-h-[calc(13.3vw+180px)] lg:w-[19vw] lg:pb-5">
+      <div
+        role="group"
+        aria-roledescription="carrusel"
+        aria-label={`Imágenes de ${category.title}`}
+        className="relative aspect-[10/7] w-full overflow-hidden rounded-t-xl bg-black"
+      >
         <Image
           key={activeItem.image}
           src={activeItem.image}
@@ -36,7 +41,7 @@ export default function ServiceCategoryCard({ category }: ServiceCategoryCardPro
           type="button"
           onClick={showPrevious}
           aria-label={`Mostrar imagen anterior de ${category.title}`}
-          className="absolute inset-y-0 left-0 flex w-12 items-center justify-center text-white drop-shadow-md"
+          className="absolute inset-y-0 left-0 flex w-12 items-center justify-center rounded-br-xl text-white drop-shadow-md hover:bg-black/30 focus-visible:bg-black/30"
         >
           <span aria-hidden className="block size-5 rotate-45 border-b-[3px] border-l-[3px] border-current" />
         </button>
@@ -44,13 +49,13 @@ export default function ServiceCategoryCard({ category }: ServiceCategoryCardPro
           type="button"
           onClick={showNext}
           aria-label={`Mostrar imagen siguiente de ${category.title}`}
-          className="absolute inset-y-0 right-0 flex w-12 items-center justify-center text-white drop-shadow-md"
+          className="absolute inset-y-0 right-0 flex w-12 items-center justify-center rounded-bl-xl text-white drop-shadow-md hover:bg-black/30 focus-visible:bg-black/30"
         >
           <span aria-hidden className="block size-5 -rotate-45 border-r-[3px] border-b-[3px] border-current" />
         </button>
       </div>
       <div className="px-2 pt-5 text-center">
-        <h3 className="whitespace-nowrap text-[17px] leading-6 font-extrabold lg:text-[18px]">
+        <h3 className="text-center text-[17px] leading-6 font-extrabold text-balance lg:text-[18px]">
           {category.slug === "protesis-fija" ? (
             <>
               <span className="lg:hidden">Prótesis Fija</span>

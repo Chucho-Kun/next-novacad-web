@@ -17,7 +17,7 @@ export default function Hero() {
           Sonrisa Natural
         </h1>
         <div
-          aria-hidden
+          aria-hidden="true"
           className="mt-6 mb-5 h-0.5 w-[70vw] bg-white lg:mt-[22px] lg:mb-[19px] lg:w-[47vw]"
         />
         <p className="font-display text-[23px] leading-[1.5] font-bold text-shadow-[0_2px_5px_rgb(0_0_0_/_0.75)] xs:text-xl lg:text-[30px] lg:leading-[35px] 2xl:text-[50px] 2xl:leading-[60px]">
@@ -30,17 +30,19 @@ export default function Hero() {
             href={priceListUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-[38px] w-[140px] items-center justify-center rounded-xl bg-white px-4 font-display text-lg leading-none font-bold text-[#011458] shadow-[0_2px_10px_rgb(0_0_0_/_0.55)] transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white max-[479px]:w-[250px] lg:w-auto lg:px-[15px] lg:text-xl 2xl:text-[30px]"
+            className="flex min-h-[44px] w-[140px] items-center justify-center rounded-xl bg-white px-4 py-2 text-center font-display text-lg leading-tight font-bold text-[#011458] shadow-[0_2px_10px_rgb(0_0_0_/_0.55)] transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white max-[479px]:w-[250px] lg:w-auto lg:px-[15px] lg:text-xl 2xl:text-[30px]"
           >
             Lista de precios
+            <span className="sr-only">(se abre en una pestaña nueva)</span>
           </a>
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-[38px] w-[140px] items-center justify-center rounded-xl bg-brand-blue px-4 font-display text-lg leading-none font-bold text-white shadow-[0_2px_10px_rgb(0_0_0_/_0.55)] transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white max-[479px]:w-[250px] lg:w-auto lg:px-[15px] lg:text-xl 2xl:text-[30px]"
+            className="flex min-h-[44px] w-[140px] items-center justify-center rounded-xl bg-brand-blue px-4 py-2 text-center font-display text-lg leading-tight font-bold text-white shadow-[0_2px_10px_rgb(0_0_0_/_0.55)] transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white max-[479px]:w-[250px] lg:w-auto lg:px-[15px] lg:text-xl 2xl:text-[30px]"
           >
             Enviar trabajo
+            <span className="sr-only">(se abre en una pestaña nueva)</span>
           </a>
         </div>
       </div>

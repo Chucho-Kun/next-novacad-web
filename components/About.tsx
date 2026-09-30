@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="quienes-somos" className="bg-white pt-10 pb-10 lg:pt-20">
+    <section id="quienes-somos" aria-labelledby="quienes-somos-title" className="bg-white pt-10 pb-10 lg:pt-20">
       <div className="mx-auto flex w-[90vw] flex-col items-center lg:w-[80vw] lg:flex-row lg:justify-between">
         <div className="flex w-full flex-col lg:w-[40vw] lg:items-start">
-          <h2 className="text-center text-[30px] leading-9 font-normal max-[479px]:text-[25px] max-[479px]:leading-7.5 max-[479px]:font-bold lg:text-left lg:text-[28px] lg:font-medium">
+          <h2 id="quienes-somos-title" className="text-center text-[30px] leading-9 font-normal max-[479px]:text-[25px] max-[479px]:leading-7.5 max-[479px]:font-bold lg:text-left lg:text-[28px] lg:font-medium">
             ¿Quiénes Somos?
           </h2>
           <div className="mt-7.5 w-full lg:hidden">

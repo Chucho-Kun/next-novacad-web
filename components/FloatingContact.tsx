@@ -8,10 +8,15 @@ export default function FloatingContact() {
       aria-label="Contacto rápido"
       className="fixed right-3 bottom-10 z-[60] flex flex-col gap-5 lg:right-6 lg:bottom-[34px]"
     >
-      <a href="tel:+525662682487" aria-label="Llamar a NOVACAD" className="rounded-full">
+      <a
+        href="tel:+525662682487"
+        aria-label="Llamar a NOVACAD"
+        className="rounded-full focus-visible:outline-offset-4"
+      >
         <Image
           src="/images/n-2-icono-telefono.png"
           alt=""
+          aria-hidden="true"
           width={60}
           height={60}
           loading="eager"
@@ -22,12 +27,13 @@ export default function FloatingContact() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Contactar a NOVACAD por WhatsApp"
-        className="rounded-full"
+        aria-label="Contactar a NOVACAD por WhatsApp (se abre en una pestaña nueva)"
+        className="rounded-full focus-visible:outline-offset-4"
       >
         <Image
           src="/images/n-2-icono-waf.png"
           alt=""
+          aria-hidden="true"
           width={60}
           height={60}
           loading="eager"

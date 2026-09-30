@@ -34,9 +34,10 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
+              aria-current={index === 0 ? "page" : undefined}
               className={
                 index === 0
-                  ? "rounded-[10px] bg-brand-cyan px-4 py-2.5 text-base font-normal text-white 2xl:text-[23px]"
+                  ? "rounded-[10px] bg-brand-blue px-4 py-2.5 text-base font-normal text-white 2xl:text-[23px]"
                   : "rounded-[10px] px-4 py-2.5 text-base font-medium text-black transition-colors hover:text-brand-blue 2xl:text-[23px]"
               }
             >

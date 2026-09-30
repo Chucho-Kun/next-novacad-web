@@ -100,9 +100,9 @@ export default function ContactForm() {
 
   return (
     <div id="contact-form" className="w-[60vw] -translate-y-4 lg:w-[26vw] lg:translate-y-0">
-      <h3 className="mb-3 text-xl leading-[30px] font-semibold">Escribenos</h3>
+      <h3 className="mb-3 text-xl leading-[30px] font-semibold">Escríbenos</h3>
       <form onSubmit={handleSubmit} noValidate className="text-[#333]">
-        {/* Honeypot — oculto para usuarios, visible para bots */}
+        {/* Honeypot — oculto para usuarios y lectores de pantalla, visible para bots */}
         <input
           type="text"
           name="_gotcha"
@@ -124,10 +124,10 @@ export default function ContactForm() {
           placeholder="Nombre..."
           aria-invalid={!!fieldErrors.name}
           aria-describedby={fieldErrors.name ? "contact-name-error" : undefined}
-          className="mb-1 h-[38px] w-full rounded-[10px] border border-[#ccc] bg-white px-3 text-sm placeholder:text-[#999] focus:border-brand-cyan focus:outline-none"
+          className="mb-1 h-[38px] w-full rounded-[10px] border border-[#ccc] bg-white px-3 text-sm placeholder:text-[#767676] focus:border-brand-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-cyan"
         />
         {fieldErrors.name ? (
-          <p id="contact-name-error" className="mb-3 text-xs text-white">
+          <p id="contact-name-error" role="alert" className="mb-3 text-xs text-white">
             {fieldErrors.name}
           </p>
         ) : (
@@ -146,10 +146,10 @@ export default function ContactForm() {
           placeholder="E-mail..."
           aria-invalid={!!fieldErrors.email}
           aria-describedby={fieldErrors.email ? "contact-email-error" : undefined}
-          className="mb-1 h-[38px] w-full rounded-[10px] border border-[#ccc] bg-white px-3 text-sm placeholder:text-[#999] focus:border-brand-cyan focus:outline-none"
+          className="mb-1 h-[38px] w-full rounded-[10px] border border-[#ccc] bg-white px-3 text-sm placeholder:text-[#767676] focus:border-brand-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-cyan"
         />
         {fieldErrors.email ? (
-          <p id="contact-email-error" className="mb-3 text-xs text-white">
+          <p id="contact-email-error" role="alert" className="mb-3 text-xs text-white">
             {fieldErrors.email}
           </p>
         ) : (
@@ -166,10 +166,10 @@ export default function ContactForm() {
           placeholder="Mensaje..."
           aria-invalid={!!fieldErrors.message}
           aria-describedby={fieldErrors.message ? "contact-message-error" : undefined}
-          className="mb-1 h-[58px] w-full resize-y rounded-[10px] border border-[#ccc] bg-white px-3 py-2 text-sm placeholder:text-[#999] focus:border-brand-cyan focus:outline-none lg:mb-1"
+          className="mb-1 h-[58px] w-full resize-y rounded-[10px] border border-[#ccc] bg-white px-3 py-2 text-sm placeholder:text-[#767676] focus:border-brand-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-cyan lg:mb-1"
         />
         {fieldErrors.message ? (
-          <p id="contact-message-error" className="mb-3 text-xs text-white">
+          <p id="contact-message-error" role="alert" className="mb-3 text-xs text-white">
             {fieldErrors.message}
           </p>
         ) : (
@@ -178,7 +178,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={submitting}
-          className="h-[38px] w-full rounded-[10px] bg-brand-cyan px-[15px] text-lg text-white transition-colors hover:bg-[#0078aa] disabled:cursor-not-allowed disabled:opacity-70 lg:w-auto"
+          className="h-[38px] w-full rounded-[10px] bg-[#0078aa] px-[15px] text-lg text-white transition-colors hover:bg-brand-deep disabled:cursor-not-allowed disabled:opacity-70 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-blue focus-visible:outline-none lg:w-auto"
         >
           {submitting ? "Enviando..." : "Enviar"}
         </button>
@@ -187,7 +187,13 @@ export default function ContactForm() {
         {success ? (
           <>
             {success}{" "}
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="underline">
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Continuar por WhatsApp de NOVACAD"
+              className="underline focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-blue focus-visible:outline-none"
+            >
               WhatsApp
             </a>
             .

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type MobileNavProps = {
   items: ReadonlyArray<{ href: string; label: string }>;
@@ -10,15 +10,19 @@ type MobileNavProps = {
 
 export default function MobileNav({ items }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     function closeOnEscape(event: KeyboardEvent) {
-      if (event.key === "Escape") setIsOpen(false);
+      if (event.key === "Escape" && isOpen) {
+        setIsOpen(false);
+        toggleRef.current?.focus();
+      }
     }
 
     document.addEventListener("keydown", closeOnEscape);
     return () => document.removeEventListener("keydown", closeOnEscape);
-  }, []);
+  }, [isOpen]);
 
   return (
     <div className="lg:hidden">
@@ -35,15 +39,16 @@ export default function MobileNav({ items }: MobileNavProps) {
         </Link>
         <button
           type="button"
+          ref={toggleRef}
           aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"
           onClick={() => setIsOpen((open) => !open)}
-          className={`flex size-[60px] items-center justify-center text-2xl text-white transition-colors ${
-            isOpen ? "bg-[#c8c8c8]" : "bg-brand-cyan"
+          className={`flex size-[60px] items-center justify-center text-2xl text-white transition-colors focus-visible:-outline-offset-4 focus-visible:outline-white ${
+            isOpen ? "bg-brand-blue" : "bg-brand-cyan"
           }`}
         >
-          <span aria-hidden className="flex w-4 flex-col gap-[3px]">
+          <span aria-hidden="true" className="flex w-4 flex-col gap-[3px]">
             <span className="h-0.5 w-full bg-current" />
             <span className="h-0.5 w-full bg-current" />
             <span className="h-0.5 w-full bg-current" />
@@ -52,13 +57,14 @@ export default function MobileNav({ items }: MobileNavProps) {
       </div>
       {isOpen ? (
         <nav id="mobile-navigation" aria-label="Navegación móvil" className="border-b border-brand-blue bg-white">
-          <ul className="flex h-[300px] flex-col items-center justify-around py-2">
+          <ul className="flex min-h-[300px] flex-col items-center justify-around py-2">
             {items.map((item, index) => (
               <li key={item.href}>
                 <a
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-6 py-2 text-[17px] ${index === 0 ? "text-[#087cff]" : "text-black"}`}
+                  aria-current={index === 0 ? "page" : undefined}
+                  className={`block rounded-[10px] px-6 py-3 text-[17px] ${index === 0 ? "font-semibold text-brand-blue" : "text-black"}`}
                 >
                   {item.label}
                 </a>
