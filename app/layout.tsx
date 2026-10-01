@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
+import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -54,8 +55,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
   return (
     <html lang="es-MX" className={`${montserrat.variable} ${agency.variable} h-full antialiased`}>
+      {gtmId ? <GoogleTagManager gtmId={gtmId} /> : null}
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );

@@ -9,9 +9,8 @@
 - No test runner — no `test` script, no jest/vitest
 
 ## Verification
-- Order: `npm run lint` → `npm run build` (build runs `tsc --noEmit` implicitly)
-- No CI, no pre-commit hooks — run lint+build manually
-- Current env: Node `v22.14.0` + npm `11.4.1`; mismatch causes lockfile drift
+- Order: `npm run lint` → `npm run build` (build type-checks; fix type errors before finishing)
+- No CI, no pre-commit hooks, no test runner — run lint+build manually
 
 ## Architecture
 - Next.js 16.3.6 + React 19.2.8 + TypeScript 5 + Tailwind CSS 4. App Router, no `src/` or `pages/`.
@@ -26,7 +25,7 @@
 - Flow: `ContactForm.tsx:56` → `fetch("/api/contact", POST JSON {name,email,message,_gotcha})`. Zod-validated twice (client for inline errors, server returns 400 `{ok:false, issues}` mapped back to fields).
 - Honeypot `_gotcha`: non-empty returns silent `200 {ok:true}` without sending mail — do not "fix" this.
 - In-memory rate limit (`route.ts:6`): 5 req / 10 min per IP → `429` + `Retry-After`. Resets on redeploy; repeated manual testing will trip it.
-- Env (`route.ts:72`): `RESEND_API_KEY` required (else 500 "Falta configuración"); `CONTACT_TO` defaults to `gameroapp@gmail.com`, `CONTACT_FROM` to `contacto@novacad.com.mx`. `.env.local` is gitignored (`.gitignore:34`) — never commit it. `CONTACT_FROM` domain must be verified in Resend or sends fail with a domain error message.
+- Env (`route.ts:72`): `RESEND_API_KEY` required (else 500 "Falta configuración"); `CONTACT_TO` defaults to `gameroapp@gmail.com`, `CONTACT_FROM` to `contacto@novacad.com.mx`. `.env*` is gitignored — never commit it. `CONTACT_FROM` domain must be verified in Resend or sends fail with a domain error message.
 - Error fallback convention: user-facing errors always append `o escribe a novacad.social@gmail.com`.
 
 ## Tailwind v4 / styling
@@ -38,3 +37,4 @@
 - `specs/` holds numbered implementation-history `.md` files + `.spec-config.yml` — reference only, not live code.
 - Fonts: Montserrat via `next/font/google`, Agency via local `app/fonts/agencyb.ttf:13` (`weight:700` only).
 - SEO pattern: per-page `generateMetadata` with canonical + OG/Twitter images + `JsonLd` component (`Organization`/`WebSite`/`ItemList` on home, `BreadcrumbList`/`Service` on `[slug]`).
+- GTM: `<GoogleTagManager>` from `@next/third-parties/google` in `app/layout.tsx` (injects both head script + body noscript — never paste GTM snippets manually). Container ID comes from `NEXT_PUBLIC_GTM_ID`; if unset, GTM simply doesn't render.
