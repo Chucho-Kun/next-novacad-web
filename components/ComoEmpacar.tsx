@@ -41,8 +41,8 @@ export default function ComoEmpacar() {
                 <Image
                   src={step.icon}
                   alt={step.iconAlt}
-                  width={44}
-                  height={44}
+                  width={80}
+                  height={80}
                   className="h-11 w-11 object-contain"
                 />
               </div>
