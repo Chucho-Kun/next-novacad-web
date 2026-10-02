@@ -7,7 +7,7 @@ export default function ComoEmpacar() {
     <section
       id="como-empacar"
       aria-labelledby="como-empacar-titulo"
-      className="bg-brand-soft px-[5vw] py-[50px] lg:px-[10vw]"
+      className="bg-brand-soft px-[5vw] py-12.5 lg:px-[10vw]"
     >
       <h2
         id="como-empacar-titulo"
@@ -77,7 +77,7 @@ export default function ComoEmpacar() {
                       >
                         <span
                           aria-hidden="true"
-                          className="mt-[9px] h-2 w-2 shrink-0 rounded-full bg-brand-blue"
+                          className="mt-2.25 h-2 w-2 shrink-0 rounded-full bg-brand-blue"
                         />
                         {bullet}
                       </li>

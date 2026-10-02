@@ -228,31 +228,6 @@ export const serviceCategories: ServiceCategory[] = [
     title: "Otros",
     items: [
       {
-        slug: "alineadores",
-        title: "Alineadores",
-        href: "/servicios/alineadores",
-        image: "/images/Otros-Alineadores.jpg",
-        alt: "Alineadores dentales transparentes",
-        intro: [
-          "Los alineadores dentales son dispositivos transparentes removibles diseñados para corregir la posición dental de manera progresiva y controlada.",
-          "A través de planificación digital y movimientos graduales, se realizan tratamientos de ortodoncia con precisión y estética. El proceso incluye el diseño digital y la fabricación de las férulas alineadoras según el proceso aprobado por el odontólogo.",
-        ],
-        categories: ["Alineadores Dentales"],
-        tags: ["Alineador Dental", "laboratorio dental", "alineadores dentales"],
-        idealForTitle: "¿Cuándo se utilizan?",
-        idealFor: [
-          "Corrección de apiñamiento leve a moderado",
-          "Corrección de problemas menores de espacios interdentales",
-          "Correcciones estéticas en adultos",
-          "Casos donde se busca una alternativa más estética a la ortodoncia tradicional",
-        ],
-        featuresTitle: "VENTAJAS",
-        features: ["Invisibles y estéticos", "Máxima comodidad", "Fáciles de usar", "Tratamiento eficaz"],
-        metaTitle: "Alineadores | NOVACAD Laboratorio Dental",
-        metaDescription:
-          "Alineadores transparentes removibles: corrección progresiva de apiñamiento y espacios con planificación digital y máxima discreción.",
-      },
-      {
         slug: "guardas-oclusales",
         title: "Guardas",
         href: "/servicios/guardas-oclusales",
@@ -286,6 +261,31 @@ export const serviceCategories: ServiceCategory[] = [
           "Guardas oclusales digitales para bruxismo y protección protésica: adaptación precisa, estabilidad oclusal y prevención del desgaste dental.",
       },
       {
+        slug: "alineadores",
+        title: "Alineadores Novaligner",
+        href: "/servicios/alineadores",
+        image: "/images/Otros-Alineadores.jpg",
+        alt: "Alineadores dentales transparentes",
+        intro: [
+          "Los alineadores dentales son dispositivos transparentes removibles diseñados para corregir la posición dental de manera progresiva y controlada.",
+          "A través de planificación digital y movimientos graduales, se realizan tratamientos de ortodoncia con precisión y estética. El proceso incluye el diseño digital y la fabricación de las férulas alineadoras según el proceso aprobado por el odontólogo.",
+        ],
+        categories: ["Alineadores Dentales"],
+        tags: ["Alineador Dental", "laboratorio dental", "alineadores dentales"],
+        idealForTitle: "¿Cuándo se utilizan?",
+        idealFor: [
+          "Corrección de apiñamiento leve a moderado",
+          "Corrección de problemas menores de espacios interdentales",
+          "Correcciones estéticas en adultos",
+          "Casos donde se busca una alternativa más estética a la ortodoncia tradicional",
+        ],
+        featuresTitle: "VENTAJAS",
+        features: ["Invisibles y estéticos", "Máxima comodidad", "Fáciles de usar", "Tratamiento eficaz"],
+        metaTitle: "Alineadores | NOVACAD Laboratorio Dental",
+        metaDescription:
+          "Alineadores transparentes removibles: corrección progresiva de apiñamiento y espacios con planificación digital y máxima discreción.",
+      },
+      {
         slug: "guias-quirurgicas",
         title: "Guías quirúrgicas",
         href: "/servicios/guias-quirurgicas",
@@ -310,7 +310,7 @@ export const serviceCategories: ServiceCategory[] = [
         metaTitle: "Guías Quirúrgicas | NOVACAD Laboratorio Dental",
         metaDescription:
           "Guías quirúrgicas personalizadas para implantes: planificación tomográfica y precisión milimétrica en posición, angulación y profundidad.",
-      },
+      }
     ],
   },
 ];

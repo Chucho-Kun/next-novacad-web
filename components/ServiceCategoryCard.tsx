@@ -25,7 +25,7 @@ export default function ServiceCategoryCard({ category }: ServiceCategoryCardPro
 
   return (
     <article aria-labelledby={headingId} className="w-[40vw] overflow-hidden rounded-xl border border-[#c7c7c7] bg-white pb-9 md:w-[34vw] lg:min-h-[calc(13.3vw+180px)] lg:w-[19vw] lg:pb-5">
-      <div role="group" aria-roledescription="carrusel" aria-label={`Imágenes de ${category.title}`} className="relative aspect-[10/7] w-full overflow-hidden rounded-t-xl bg-black">
+      <div role="group" aria-roledescription="carrusel" aria-label={`Imágenes de ${category.title}`} className="relative aspect-10/7 w-full overflow-hidden rounded-t-xl bg-black">
         <Image
           key={activeItem.image}
           src={activeItem.image}

@@ -52,6 +52,22 @@ export default function Contact() {
           <address className="mb-7.5 text-base leading-5.5 not-italic">
             Cerezo 77A, Boulevares Impala, 55040, Ecatepec de Morelos, Méx, México
           </address>
+
+           <h3 className="mb-3 text-xl leading-7.5 font-semibold">Síguenos</h3>
+          <div className="mb-7.5 flex gap-2.5">
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Abrir ${social.label} de NOVACAD`}
+                className="rounded-[10px] focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-blue focus-visible:outline-none"
+              >
+                <Image src={social.icon} alt="" aria-hidden="true" width={50} height={50} className="size-8.75" />
+              </a>
+            ))}
+          </div>
         </div>
         <div className="mt-10 lg:mt-0">
           <ContactForm />
