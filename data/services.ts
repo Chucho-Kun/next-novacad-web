@@ -310,7 +310,43 @@ export const serviceCategories: ServiceCategory[] = [
         metaTitle: "Guías Quirúrgicas | NOVACAD Laboratorio Dental",
         metaDescription:
           "Guías quirúrgicas personalizadas para implantes: planificación tomográfica y precisión milimétrica en posición, angulación y profundidad.",
-      }
+      },
+    ],
+  },
+  {
+    slug: "nuevo-producto",
+    title: "Nuevo producto",
+    items: [
+      {
+        slug: "resina-hibrida-permanente",
+        title: "Resina Híbrida - Prótesis Permanentes",
+        href: "/servicios/resina-hibrida-permanente",
+        image: "/images/resina-hibrida-permanente.jpg",
+        alt: "Prótesis permanente de resina híbrida Bio Crown Diamond",
+        intro: [
+          "Bio Crown Diamond es una resina de alta tecnología para impresión 3D dental, desarrollada para la fabricación de restauraciones permanentes con excelente resistencia y biocompatibilidad.",
+          "Diseñada para restauraciones permanentes, con apariencia similar a la dentición natural.",
+          "Permite obtener resultados funcionales y naturales mediante un flujo de trabajo completamente digital.",
+        ],
+        categories: ["Prótesis Dental Permanente", "Resina Híbrida"],
+        tags: ["Resina híbrida permanente", "Bio Crown Diamond", "prótesis permanente impresa 3D"],
+        idealForTitle: "Se utiliza principalmente en:",
+        idealFor: [
+          "Coronas unitarias definitivas",
+          "Inlays, onlays y carillas",
+          "Incrustaciones",
+          "Prótesis sobre implantes",
+          "Núcleos para prótesis estratificadas",
+        ],
+        featuresTitle: "CARACTERÍSTICAS",
+        features: [
+          "Resistencia a la flexión de 143 MPa",
+          "Máxima estética y naturalidad",
+        ],
+        metaTitle: "Resina Híbrida Permanente | NOVACAD Laboratorio Dental",
+        metaDescription:
+          "Resina híbrida Bio Crown Diamond para impresión 3D: restauraciones permanentes biocompatibles de 143 MPa con estética natural y flujo digital.",
+      },
     ],
   },
 ];
