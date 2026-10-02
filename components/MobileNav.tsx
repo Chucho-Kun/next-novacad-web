@@ -31,15 +31,15 @@ export default function MobileNav({ items }: MobileNavProps) {
 
   return (
     <div className="lg:hidden">
-      <div className="flex h-[14vh] min-h-24 max-h-[118px] items-center justify-between px-[9vw]">
+      <div className="flex h-[14vh] min-h-24 max-h-29.5 items-center justify-between px-[9vw]">
         <Link href="#inicio" aria-label="Ir al inicio de NOVACAD" onClick={() => setIsOpen(false)} className="ml-2">
           <Image
-            src="/images/n-logo-novacad.png"
+            src="/images/logo-novacad.webp"
             alt="NOVACAD Laboratorios y Depósitos"
             width={300}
             height={58}
             priority
-            className="h-[7vh] min-h-[50px] max-h-[60px] w-auto"
+            className="h-[7vh] min-h-12.5 max-h-15 w-auto"
           />
         </Link>
         <button
@@ -49,11 +49,11 @@ export default function MobileNav({ items }: MobileNavProps) {
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"
           onClick={() => setIsOpen((open) => !open)}
-          className={`flex size-[60px] items-center justify-center text-2xl text-white transition-colors ${
+          className={`flex size-15 items-center justify-center text-2xl text-white transition-colors ${
             isOpen ? "bg-brand-blue" : "bg-brand-cyan"
           }`}
         >
-          <span aria-hidden="true" className="flex w-4 flex-col gap-[3px]">
+          <span aria-hidden="true" className="flex w-4 flex-col gap-0.75">
             <span className="h-0.5 w-full bg-current" />
             <span className="h-0.5 w-full bg-current" />
             <span className="h-0.5 w-full bg-current" />
@@ -62,7 +62,7 @@ export default function MobileNav({ items }: MobileNavProps) {
       </div>
       {isOpen ? (
         <nav id="mobile-navigation" aria-label="Navegación móvil" className="border-b border-brand-blue bg-white">
-          <ul className="flex h-[300px] flex-col items-center justify-around py-2">
+          <ul className="flex h-75 flex-col items-center justify-around py-2">
             {items.map((item, index) => (
               <li key={item.href}>
                 <a

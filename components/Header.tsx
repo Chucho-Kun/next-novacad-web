@@ -15,14 +15,14 @@ export default function Header() {
     <header className="relative z-50 bg-white">
       <a
         href="#contenido"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-brand-deep focus:px-4 focus:py-2 focus:text-white"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-100 focus:rounded-lg focus:bg-brand-deep focus:px-4 focus:py-2 focus:text-white"
       >
         Saltar al contenido
       </a>
       <div className="hidden h-[14vh] min-h-24 max-h-30.5 items-center justify-between border-b-2 border-brand-blue px-[7vw] lg:flex">
         <Link href="#inicio" aria-label="Ir al inicio de NOVACAD">
           <Image
-            src="/images/n-logo-novacad.png"
+            src="/images/logo-novacad.webp"
             alt="NOVACAD Laboratorios y Depósitos"
             width={300}
             height={58}
