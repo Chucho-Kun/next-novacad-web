@@ -27,7 +27,7 @@ export default function Services() {
 
       <div className="mx-auto mt-7.5 flex w-[85vw] flex-wrap items-start justify-center gap-y-5 md:w-[70vw] lg:w-[80vw] lg:flex-nowrap lg:gap-y-0">
         {newProductCategory ? (
-          <ServiceCategoryCard key={newProductCategory.slug} category={newProductCategory} />
+          <ServiceCategoryCard key={newProductCategory.slug} category={newProductCategory} wide />
         ) : null}
       </div>
     </section>

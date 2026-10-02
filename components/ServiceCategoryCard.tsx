@@ -7,9 +7,10 @@ import type { ServiceCategory } from "@/data/services";
 
 type ServiceCategoryCardProps = {
   category: ServiceCategory;
+  wide?: boolean;
 };
 
-export default function ServiceCategoryCard({ category }: ServiceCategoryCardProps) {
+export default function ServiceCategoryCard({ category, wide = false }: ServiceCategoryCardProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeItem = category.items[activeIndex];
 
@@ -24,14 +25,30 @@ export default function ServiceCategoryCard({ category }: ServiceCategoryCardPro
   const headingId = `${category.slug}-titulo`;
 
   return (
-    <article aria-labelledby={headingId} className="w-[40vw] overflow-hidden rounded-xl border border-[#c7c7c7] bg-white pb-9 md:w-[34vw] lg:min-h-[calc(13.3vw+180px)] lg:w-[19vw] lg:pb-5">
-      <div role="group" aria-roledescription="carrusel" aria-label={`Imágenes de ${category.title}`} className="relative aspect-10/7 w-full overflow-hidden rounded-t-xl bg-black">
+    <article
+      aria-labelledby={headingId}
+      className={
+        wide
+          ? "w-[85vw] overflow-hidden rounded-xl border border-[#c7c7c7] bg-white pb-9 md:w-[70vw] lg:min-h-[calc(13.3vw+180px)] lg:w-[39.3vw] lg:pb-5"
+          : "w-[40vw] overflow-hidden rounded-xl border border-[#c7c7c7] bg-white pb-9 md:w-[34vw] lg:min-h-[calc(13.3vw+180px)] lg:w-[19vw] lg:pb-5"
+      }
+    >
+      <div
+        role="group"
+        aria-roledescription="carrusel"
+        aria-label={`Imágenes de ${category.title}`}
+        className={
+          wide
+            ? "relative aspect-[21/9] w-full overflow-hidden rounded-t-xl bg-black"
+            : "relative aspect-10/7 w-full overflow-hidden rounded-t-xl bg-black"
+        }
+      >
         <Image
           key={activeItem.image}
           src={activeItem.image}
           alt={activeItem.alt}
           fill
-          sizes="(max-width: 479px) 40vw, (max-width: 991px) 34vw, 19vw"
+          sizes={wide ? "(max-width: 479px) 85vw, (max-width: 991px) 70vw, 39vw" : "(max-width: 479px) 40vw, (max-width: 991px) 34vw, 19vw"}
           className="object-cover"
         />
         <button
