@@ -39,7 +39,7 @@ export default function ServiceCategoryCard({ category, wide = false }: ServiceC
         aria-label={`Imágenes de ${category.title}`}
         className={
           wide
-            ? "relative aspect-[21/9] w-full overflow-hidden rounded-t-xl bg-black"
+            ? "relative aspect-[812/300] w-full overflow-hidden rounded-t-xl bg-black"
             : "relative aspect-10/7 w-full overflow-hidden rounded-t-xl bg-black"
         }
       >
