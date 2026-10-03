@@ -51,22 +51,26 @@ export default function ServiceCategoryCard({ category, wide = false }: ServiceC
           sizes={wide ? "(max-width: 479px) 85vw, (max-width: 991px) 70vw, 39vw" : "(max-width: 479px) 40vw, (max-width: 991px) 34vw, 19vw"}
           className="object-cover"
         />
-        <button
-          type="button"
-          onClick={showPrevious}
-          aria-label={`Mostrar imagen anterior de ${category.title}`}
-          className="absolute inset-y-0 left-0 flex w-12 items-center justify-center text-white drop-shadow-md"
-        >
-          <span aria-hidden="true" className="block size-5 rotate-45 border-b-[3px] border-l-[3px] border-current" />
-        </button>
-        <button
-          type="button"
-          onClick={showNext}
-          aria-label={`Mostrar imagen siguiente de ${category.title}`}
-          className="absolute inset-y-0 right-0 flex w-12 items-center justify-center text-white drop-shadow-md"
-        >
-          <span aria-hidden="true" className="block size-5 -rotate-45 border-r-[3px] border-b-[3px] border-current" />
-        </button>
+        {category.items.length > 1 ? (
+          <>
+            <button
+              type="button"
+              onClick={showPrevious}
+              aria-label={`Mostrar imagen anterior de ${category.title}`}
+              className="absolute inset-y-0 left-0 flex w-12 items-center justify-center text-white drop-shadow-md"
+            >
+              <span aria-hidden="true" className="block size-5 rotate-45 border-b-[3px] border-l-[3px] border-current" />
+            </button>
+            <button
+              type="button"
+              onClick={showNext}
+              aria-label={`Mostrar imagen siguiente de ${category.title}`}
+              className="absolute inset-y-0 right-0 flex w-12 items-center justify-center text-white drop-shadow-md"
+            >
+              <span aria-hidden="true" className="block size-5 -rotate-45 border-r-[3px] border-b-[3px] border-current" />
+            </button>
+          </>
+        ) : null}
         <p aria-live="polite" aria-atomic="true" className="sr-only">
           Imagen {activeIndex + 1} de {category.items.length}: {activeItem.title}
         </p>
