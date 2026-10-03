@@ -3,6 +3,7 @@ export type ServiceItem = {
   title: string;
   href: string;
   image: string;
+  detailImage?: string;
   alt: string;
   intro: string[];
   categories: string[];
@@ -321,7 +322,8 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "resina-hibrida-permanente",
         title: "Resina Híbrida - Prótesis Permanentes",
         href: "/servicios/resina-hibrida-permanente",
-        image: "/images/resina-hibrida-permanente.jpg",
+        image: "/images/nuevo-producto/slide-resina-hibrida.jpg",
+        detailImage: "/images/nuevo-producto/page-resina-hibrida.jpg",
         alt: "Prótesis permanente de resina híbrida Bio Crown Diamond",
         intro: [
           "Bio Crown Diamond es una resina de alta tecnología para impresión 3D dental, desarrollada para la fabricación de restauraciones permanentes con excelente resistencia y biocompatibilidad.",

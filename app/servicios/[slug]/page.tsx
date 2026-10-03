@@ -99,7 +99,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       url: `${baseUrl}/`,
     },
     areaServed: "MX",
-    image: `${baseUrl}${service.image}`,
+    image: `${baseUrl}${service.detailImage ?? service.image}`,
   };
 
   return (
@@ -124,7 +124,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           {/* Imagen */}
           <div className="order-1">
             <Image
-              src={service.image}
+              src={service.detailImage ?? service.image}
               alt={service.alt}
               width={800}
               height={600}
