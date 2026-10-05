@@ -11,16 +11,56 @@ type ServiceCategoryCardProps = {
 };
 
 export default function ServiceCategoryCard({ category, wide = false }: ServiceCategoryCardProps) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeItem = category.items[activeIndex];
+  const count = category.items.length;
+  const [trackIndex, setTrackIndex] = useState(1);
+  const [transitionOn, setTransitionOn] = useState(true);
+
+  const realIndex = count > 1 ? (((trackIndex - 1) % count) + count) % count : 0;
+  const activeItem = category.items[realIndex];
 
   function showPrevious() {
-    setActiveIndex((current) => (current === 0 ? category.items.length - 1 : current - 1));
+    if (count <= 1) return;
+    if (trackIndex <= 0) {
+      setTransitionOn(false);
+      setTrackIndex(count - 1);
+      return;
+    }
+    setTransitionOn(true);
+    setTrackIndex(trackIndex - 1);
   }
 
   function showNext() {
-    setActiveIndex((current) => (current + 1) % category.items.length);
+    if (count <= 1) return;
+    if (trackIndex >= count + 1) {
+      setTransitionOn(false);
+      setTrackIndex(2);
+      return;
+    }
+    setTransitionOn(true);
+    setTrackIndex(trackIndex + 1);
   }
+
+  function handleTransitionEnd() {
+    if (count <= 1) return;
+    if (trackIndex === count + 1) {
+      setTransitionOn(false);
+      setTrackIndex(1);
+    } else if (trackIndex === 0) {
+      setTransitionOn(false);
+      setTrackIndex(count);
+    }
+  }
+
+  const firstItem = category.items[0];
+  const lastItem = category.items[count - 1];
+  const slides =
+    count > 1
+      ? [
+          { item: lastItem, key: `clon-inicio-${lastItem.slug}`, hidden: true },
+          ...category.items.map((item) => ({ item, key: item.slug, hidden: false })),
+          { item: firstItem, key: `clon-fin-${firstItem.slug}`, hidden: true },
+        ]
+      : category.items.map((item) => ({ item, key: item.slug, hidden: false }));
 
   const headingId = `${category.slug}-titulo`;
 
@@ -39,18 +79,31 @@ export default function ServiceCategoryCard({ category, wide = false }: ServiceC
         aria-label={`Imágenes de ${category.title}`}
         className={
           wide
-            ? "relative aspect-[812/300] w-full overflow-hidden rounded-t-xl bg-black"
+            ? "relative aspect-812/300 w-full overflow-hidden rounded-t-xl bg-black"
             : "relative aspect-10/7 w-full overflow-hidden rounded-t-xl bg-black"
         }
       >
-        <Image
-          key={activeItem.image}
-          src={activeItem.image}
-          alt={activeItem.alt}
-          fill
-          sizes={wide ? "(max-width: 479px) 85vw, (max-width: 991px) 70vw, 39vw" : "(max-width: 479px) 40vw, (max-width: 991px) 34vw, 19vw"}
-          className="object-cover"
-        />
+        <div
+          onTransitionEnd={handleTransitionEnd}
+          className={
+            transitionOn
+              ? "flex h-full w-full transition-transform duration-300 ease-out motion-reduce:transition-none"
+              : "flex h-full w-full"
+          }
+          style={{ transform: `translateX(-${count > 1 ? trackIndex * 100 : 0}%)` }}
+        >
+          {slides.map(({ item, key, hidden }) => (
+            <div key={key} aria-hidden={hidden || undefined} className="relative h-full min-w-full overflow-hidden">
+              <Image
+                src={item.image}
+                alt={hidden ? "" : item.alt}
+                fill
+                sizes={wide ? "(max-width: 479px) 85vw, (max-width: 991px) 70vw, 39vw" : "(max-width: 479px) 40vw, (max-width: 991px) 34vw, 19vw"}
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </div>
         {category.items.length > 1 ? (
           <>
             <button
@@ -72,7 +125,7 @@ export default function ServiceCategoryCard({ category, wide = false }: ServiceC
           </>
         ) : null}
         <p aria-live="polite" aria-atomic="true" className="sr-only">
-          Imagen {activeIndex + 1} de {category.items.length}: {activeItem.title}
+          Imagen {realIndex + 1} de {category.items.length}: {activeItem.title}
         </p>
       </div>
       <div className="px-2 pt-5 text-center">

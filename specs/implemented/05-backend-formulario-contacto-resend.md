@@ -1,6 +1,6 @@
 # SPEC 05 — Backend formulario de contacto con Resend (provisional gameroapp@gmail.com)
 
-> **Status:** Approved
+> **Status:** Implemented
 > **Depends on:** SPEC 02
 > **Date:** 2026-09-24
 > **Objective:** Implementar el backend del formulario de contacto con validación Zod en cliente y servidor, rate limiting en memoria y envío provisional vía Resend desde contacto@novacad.com.mx a gameroapp@gmail.com.

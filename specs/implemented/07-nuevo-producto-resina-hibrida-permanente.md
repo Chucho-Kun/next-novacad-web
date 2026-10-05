@@ -1,6 +1,6 @@
 # SPEC 07 — Nueva sección Nuevo producto con detalle Resina híbrida permanente
 
-> **Status:** Approved
+> **Status:** Implemented
 > **Depends on:** SPEC 03
 > **Date:** 2026-10-02
 > **Objective:** Agregar la sección "Nuevo producto" en `components/Services.tsx` con card de un solo item que enlaza a la nueva página `/servicios/resina-hibrida-permanente` con el contenido de `screenshots/propuesta-nueva-pagina.png` usando el template de detalle existente.
