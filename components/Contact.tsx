@@ -32,7 +32,7 @@ export default function Contact() {
         </div>
         <div className="mt-10 w-[60vw] px-4 lg:mt-0 lg:w-[26vw] lg:px-5">
 
-          <h3 className="mb-3 text-xl leading-7.5 font-semibold">Teléfono</h3>
+          <h3 className="mb-3 text-xl leading-7.5 font-semibold">Teléfonos</h3>
           <div>
             <a href="tel:+525662682487" className="mb-7.5 block w-fit rounded text-base leading-5.5 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-blue focus-visible:outline-none">
               <div className="flex flex-2 gap-2">
@@ -40,7 +40,14 @@ export default function Contact() {
                 <div>56 6268 2487</div>
               </div>
             </a>
-
+          </div>
+          <div>
+            <a href="tel:+5594617932" className="mb-7.5 block w-fit rounded text-base leading-5.5 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-blue focus-visible:outline-none">
+              <div className="flex flex-2 gap-2">
+                <div> <img src="/icons/phone.svg" className="w-5 h-5 rotate-315" alt="icono whats app" /> </div>
+                <div>55 9461 7932</div>
+              </div>
+            </a>
           </div>
 
           <h3 className="mb-3 text-xl leading-7.5 font-semibold">Correo</h3>

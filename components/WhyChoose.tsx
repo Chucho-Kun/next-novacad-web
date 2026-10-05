@@ -21,7 +21,7 @@ export default function WhyChoose() {
               aria-hidden="true"
               width={120}
               height={120}
-              className="h-10 w-auto object-contain lg:h-15.5"
+              className="h-20 w-auto object-contain lg:h-25"
             />
             <p className="mt-3.75 text-base leading-5.5 lg:text-[17px]">{item.title}</p>
           </li>

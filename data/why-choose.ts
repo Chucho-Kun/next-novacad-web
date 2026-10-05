@@ -7,17 +7,17 @@ export type WhyChooseItem = {
 export const whyChooseItems: WhyChooseItem[] = [
   {
     title: "Tecnología CAD/CAM",
-    icon: "/images/n-icono-cnc.png",
+    icon: "/images/novacad-a.webp",
     alt: "Icono de tecnología CAD CAM",
   },
   {
     title: "Materiales de alta calidad",
-    icon: "/images/n-icono-diamante-teeth.png",
+    icon: "/images/novacad-b.webp",
     alt: "Icono de materiales dentales de alta calidad",
   },
   {
     title: "Experiencia clínica",
-    icon: "/images/Icono-experiencia-clinica.jpg",
+    icon: "/images/novacad-c.webp",
     alt: "Icono de experiencia clínica",
   },
 ];
