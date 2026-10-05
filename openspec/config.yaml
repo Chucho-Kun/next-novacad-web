@@ -1,0 +1,49 @@
+schema: spec-driven
+
+# Project context (optional)
+# Add only constraints that should guide OpenSpec artifacts and workflows.
+# Include constraints an agent cannot infer by reading the code.
+# Keep general project documentation and discoverable codebase facts out.
+# Example:
+#   context: |
+#     Designs and tasks must cover Windows, macOS, and Linux
+#     Write all artifacts in Spanish
+context: |
+  Sitio corporativo B2B de NOVACAD (https://novacad.com.mx), laboratorio dental CAD/CAM en México.
+  Objetivo: captar pedidos de odontólogos/clínicas y generar confianza, no venta directa a pacientes.
+  Catálogo: prótesis fijas (Zirconia, E-Max), provisionales (PMMA, Resina Híbrida), diseño CAD/CAM
+  (Diseño de Sonrisa, Mock-up), guardas oclusales, alineadores Novaligner, guías quirúrgicas,
+  resina híbrida permanente Bio Crown Diamond.
+  Conversión principal: "Enviar trabajo" por WhatsApp, "Lista de precios" (Google Drive) y
+  formulario /api/contact (Zod + honeypot + Resend). Secciones educativas: Gestiona, Cómo empacar,
+  Procedimientos, Testimonios, Galería video.
+  Contenido estático en español es-MX. Escribir artefactos OpenSpec en español.
+  Stack: Next.js 16 App Router + React 19 + Tailwind v4 (sin tailwind.config, tema en app/globals.css).
+  Mantener app/page.tsx como Server Component; solo 5 "use client": ContactForm, MobileNav,
+  ServiceCategoryCard, TestimonialCarousel, VideoPlaylist.
+  No cambiar slugs/hrefs en data/services.ts (rompen URLs, sitemap y JSON-LD).
+  Dominio canónico https://novacad.com.mx duplicado en app/layout.tsx, app/page.tsx,
+  app/sitemap.ts, app/robots.ts y app/servicios/[slug]/page.tsx: mantener sincronizado.
+  Desarrollado y optimizado en buenas prácticas para mejorar la accesibilidad, el SEO técnico y posicionamiento en buscadores e IA.
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always state what is out of scope
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
+
+# Per-operation guidance (optional)
+# Add advisory guidance for how apply and archive work should be conducted.
+# This is separate from artifact rules above.
+# Example:
+#   operations:
+#     apply:
+#       guidance:
+#         - Keep test summaries concise
+#     archive:
+#       guidance:
+#         - Summarize the archive outcome before finishing
