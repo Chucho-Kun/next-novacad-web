@@ -10,15 +10,15 @@ type TestimonialCarouselProps = {
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <figure className="flex min-h-[180px] w-[38vw] shrink-0 flex-col justify-around rounded-[20px] bg-[#f1f1f1] px-5 py-2.5 lg:w-[24vw]">
-      <figcaption className="flex min-h-[50px] items-center justify-between gap-2">
+    <figure className="flex min-h-45 w-[38vw] shrink-0 flex-col justify-around rounded-[20px] bg-[#f1f1f1] px-5 py-2.5 lg:w-[24vw]">
+      <figcaption className="flex min-h-12.5 items-center justify-between gap-2">
         <Image
           src="/images/icono_persona.png"
           alt=""
           aria-hidden="true"
           width={100}
           height={100}
-          className="size-[25px] shrink-0 lg:size-10"
+          className="size-6.25 shrink-0 lg:size-10"
         />
         <span className="text-center text-xs font-medium lg:text-sm">{testimonial.name}</span>
         <Image
@@ -26,10 +26,10 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
           alt={`${testimonial.rating} de 5 estrellas`}
           width={200}
           height={32}
-          className="h-auto w-[60px] shrink-0 lg:w-[120px]"
+          className="h-auto w-15 shrink-0 lg:w-30"
         />
       </figcaption>
-      <blockquote className="text-justify text-xs leading-[19px] lg:text-sm lg:leading-5">{testimonial.content}</blockquote>
+      <blockquote className="text-justify text-xs leading-4.75 lg:text-sm lg:leading-5">{testimonial.content}</blockquote>
     </figure>
   );
 }
@@ -88,31 +88,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
   return (
     <div role="region" aria-roledescription="carrusel" aria-label="Testimonios de clientes">
       <div className="mb-4 flex items-center justify-center gap-3">
-        <button
-          type="button"
-          onClick={goPrev}
-          aria-label="Mostrar testimonios anteriores"
-          className="flex size-6 items-center justify-center rounded-full border border-[#767676] text-lg leading-none text-[#333] focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:outline-none"
-        >
-          <span aria-hidden="true">‹</span>
-        </button>
-        <button
-          type="button"
-          onClick={() => setIsPaused((paused) => !paused)}
-          aria-pressed={isPaused}
-          aria-label={isPaused ? "Reanudar rotación de testimonios" : "Pausar rotación de testimonios"}
-          className="flex size-6 items-center justify-center rounded-full border border-[#767676] text-sm leading-none text-[#333] focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:outline-none"
-        >
-          <span aria-hidden="true">{isPaused ? "▶" : "⏸"}</span>
-        </button>
-        <button
-          type="button"
-          onClick={goNext}
-          aria-label="Mostrar testimonios siguientes"
-          className="flex size-6 items-center justify-center rounded-full border border-[#767676] text-lg leading-none text-[#333] focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:outline-none"
-        >
-          <span aria-hidden="true">›</span>
-        </button>
+        
       </div>
       <div className="lg:hidden">
         <div
