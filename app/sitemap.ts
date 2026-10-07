@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { serviceCategories } from "@/data/services";
+import { videos } from "@/data/videos";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://novacad.com.mx";
@@ -14,6 +15,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
+  const videoUrls: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/videos`,
+      lastModified: new Date(videos[0].uploadDate),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    ...videos.map((video) => ({
+      url: `${baseUrl}/videos/${video.id}`,
+      lastModified: new Date(video.uploadDate),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+  ];
+
   return [
     {
       url: baseUrl,
@@ -22,5 +38,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     ...serviceUrls,
+    ...videoUrls,
   ];
 }

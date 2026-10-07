@@ -32,7 +32,7 @@ export default function MobileNav({ items }: MobileNavProps) {
   return (
     <div className="lg:hidden">
       <div className="flex h-[14vh] min-h-24 max-h-29.5 items-center justify-between px-[9vw]">
-        <Link href="#inicio" aria-label="Ir al inicio de NOVACAD" onClick={() => setIsOpen(false)} className="ml-2">
+        <Link href="/" aria-label="Ir al inicio de NOVACAD" onClick={() => setIsOpen(false)} className="ml-2">
           <Image
             src="/images/logo-novacad.webp"
             alt="NOVACAD Laboratorios y Depósitos"

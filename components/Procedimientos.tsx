@@ -1,3 +1,4 @@
+import Link from "next/link";
 import VideoPlaylist from "@/components/VideoPlaylist";
 
 export default function Procedimientos() {
@@ -11,6 +12,12 @@ export default function Procedimientos() {
         Procedimientos
       </h2>
       <VideoPlaylist />
+      <Link
+        href="/videos"
+        className="mt-8 inline-flex min-h-[44px] items-center justify-center rounded-[10px] border-2 border-brand-deep bg-white px-8 py-3 text-center text-base font-semibold text-brand-deep transition-colors hover:bg-brand-light focus-visible:outline-brand-deep"
+      >
+        Ver todos los videos
+      </Link>
     </section>
   );
 }

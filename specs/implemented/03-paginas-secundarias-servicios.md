@@ -14,7 +14,7 @@
 - Layout responsive del template: desktop 2 columnas (imagen a la izquierda ~40-45%, contenido a la derecha), mobile stacked (imagen arriba, contenido debajo), mismos breakpoints del home (`xs:30rem`, `lg:62rem`, `2xl:120rem`) y anchos de contenido `80vw`/`90vw` en `app/globals.css:80`.
 - Reutilización de la imagen de card de `public/images/` como imagen de cabecera del detalle (ej. `zirconia.jpg`, `emax.jpg`, `pmma.jpg`, etc) sin descargar assets nuevos; render con `next/image` y `alt` descriptivo existente en `data/services.ts:6`.
 - Extensión de `data/services.ts` como fuente única de verdad (añadir campos de detalle sin crear archivo separado), para que `components/Services.tsx:15` y `ServiceCategoryCard` sigan funcionando sin cambios.
-- Preservación de navegación existente: `ServiceCategoryCard` mantiene `href: "/servicios/[slug]"` y las anclas de la home (`#inicio`, `#quienes-somos`, `#servicios`, `#galeria`, `#contacto`) no se rompen.
+- Preservación de navegación existente: `ServiceCategoryCard` mantiene `href: "/servicios/[slug]"` y las anclas de la home (`/`, `#quienes-somos`, `#servicios`, `#galeria`, `#contacto`) no se rompen.
 - Header de la home no se incluye en el detalle; el detalle muestra solo barra azul `[Regresar]` + `Footer` (según decisión explícita del usuario). `Footer` se reutiliza sin duplicar.
 - `generateMetadata` por slug (title/description derivados de datos extendidos) y `notFound()` para slug inexistente.
 - Extracción literal del copy de las 9 URLs de referencia; corrección solo de typos evidentes sin cambiar significado (ej. `E-Maxdental` → `E-Max dental` si aparece pegado).

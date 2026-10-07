@@ -3,7 +3,7 @@ import Link from "next/link";
 import MobileNav from "@/components/MobileNav";
 
 export const navItems = [
-  { href: "#inicio", label: "Inicio" },
+  { href: "/", label: "Inicio" },
   { href: "#quienes-somos", label: "Quiénes somos" },
   { href: "#servicios", label: "Servicios" },
   { href: "#galeria", label: "Galería" },
@@ -20,7 +20,7 @@ export default function Header() {
         Saltar al contenido
       </a>
       <div className="hidden h-[14vh] min-h-24 max-h-30.5 items-center justify-between border-b-2 border-brand-blue px-[7vw] lg:flex">
-        <Link href="#inicio" aria-label="Ir al inicio de NOVACAD">
+        <Link href="/" aria-label="Ir al inicio de NOVACAD">
           <Image
             src="/images/logo-novacad.webp"
             alt="NOVACAD Laboratorios y Depósitos"
