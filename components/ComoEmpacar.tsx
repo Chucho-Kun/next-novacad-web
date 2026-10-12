@@ -50,7 +50,6 @@ export default function ComoEmpacar() {
                 aria-hidden="true"
                 className="absolute top-4 right-6 z-10 text-[40px] leading-none font-bold text-slate-300/70 select-none"
               >
-                {number}
               </span>
               <div className="relative h-full overflow-hidden rounded-2xl border border-slate-200 bg-white pt-14 pr-6 pb-6 pl-8 shadow-sm">
                 <span

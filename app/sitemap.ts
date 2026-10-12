@@ -4,12 +4,15 @@ import { videos } from "@/data/videos";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://novacad.com.mx";
-  const now = new Date();
+  // lastModified estable por grupo (SPEC 11): no usar `new Date()` por build.
+  // Al cambiar contenido, actualizar la constante de su grupo y documentarlo en AGENTS.md.
+  const HOME_LAST_MODIFIED = new Date("2026-10-12T12:00:00-06:00");
+  const SERVICES_LAST_MODIFIED = new Date("2026-10-12T12:00:00-06:00");
 
   const serviceUrls = serviceCategories.flatMap((category) =>
     category.items.map((item) => ({
       url: `${baseUrl}${item.href}`,
-      lastModified: now,
+      lastModified: SERVICES_LAST_MODIFIED,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
@@ -33,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
-      lastModified: now,
+      lastModified: HOME_LAST_MODIFIED,
       changeFrequency: "weekly",
       priority: 1,
     },

@@ -13,7 +13,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
     <figure className="flex min-h-45 w-[38vw] shrink-0 flex-col justify-around rounded-[20px] bg-[#f1f1f1] px-5 py-2.5 lg:w-[24vw]">
       <figcaption className="flex min-h-12.5 items-center justify-between gap-2">
         <Image
-          src="/images/icono_persona.png"
+          src="/images/webp/icono_persona.webp"
           alt=""
           aria-hidden="true"
           width={100}

@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Docs de referencia (specs/, openspec/): no son código vivo y pueden
+   contener literales tipo `bg-[url(...)]` que romperían el build.
+   Se excluyen del escaneo de clases. */
+@source not "../specs";
+@source not "../openspec";
+
 :root {
   --background: #ffffff;
   --foreground: #333333;

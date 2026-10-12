@@ -14,6 +14,7 @@ export default function VideoPlaylist() {
           key={activeProcedure.src}
           controls
           preload="metadata"
+          poster={activeProcedure.poster}
           aria-label={activeProcedure.title}
           aria-describedby="video-actual-descripcion"
           className="h-[476px] w-[267px] max-w-full object-contain focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:outline-none lg:w-auto lg:max-w-[44vw]"

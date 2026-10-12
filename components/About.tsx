@@ -10,8 +10,8 @@ export default function About() {
           </h2>
           <div className="mt-7.5 w-full lg:hidden">
             <Image
-              src="/images/fotografia-lab-01.jpg"
-              alt="Instalaciones y equipo del laboratorio dental NOVACAD"
+              src="/images/webp/fotografia-lab-01.webp"
+              alt="Interior del laboratorio dental NOVACAD en Ecatepec"
               width={1128}
               height={800}
               sizes="90vw"
@@ -30,12 +30,16 @@ export default function About() {
               En NOVACAD, combinamos tecnología CAD/CAM de última generación, impresión 3D y experiencia clínica para ofrecer
               calidad, rapidez y eficiencia en cada pieza dental que elaboramos.
             </p>
+            <p>
+              Nuestro laboratorio está en Ecatepec de Morelos, Estado de México, y colaboramos con odontólogos de CDMX y
+              Edomex.
+            </p>
           </div>
         </div>
         <div className="hidden w-[40vw] justify-end lg:flex">
           <Image
-            src="/images/fotografia-lab-01.jpg"
-            alt="Instalaciones y equipo del laboratorio dental NOVACAD"
+            src="/images/webp/fotografia-lab-01.webp"
+            alt="Equipo CAD/CAM del laboratorio dental NOVACAD"
             width={1128}
             height={800}
             sizes="35vw"

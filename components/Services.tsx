@@ -8,7 +8,7 @@ export default function Services() {
   return (
     <section id="servicios" aria-labelledby="servicios-titulo" className="bg-white px-[5vw] pt-5 pb-12.5 lg:px-[10vw] lg:pt-15 lg:pb-25">
       <p className="mx-auto mt-5 w-[90vw] text-justify text-base leading-5 lg:mt-7.5 lg:w-[80vw] lg:text-[17px] lg:leading-5.5">
-        En NOVACAD estamos para ofrecerte la mejor atención, calidad y rapidez. Utilizamos la combinación de tecnologías como CAD/CAM garantizando un ajuste más preciso en cada caso.
+        En NOVACAD estamos para ofrecerte la mejor atención, calidad y rapidez. Utilizamos la combinación de tecnologías como CAD/CAM garantizando un ajuste más preciso en cada caso. Somos un laboratorio dental en Ecatepec que atiende a odontólogos de CDMX y el Estado de México.
       </p>
       <div className="mx-auto mt-7.5 flex w-[85vw] flex-wrap items-start justify-between gap-y-5 md:w-[70vw] lg:w-[80vw] lg:flex-nowrap lg:gap-y-0">
         {mainCategories.map((category) => (

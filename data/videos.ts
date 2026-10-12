@@ -15,7 +15,7 @@ export const videos: VideoMeta[] = [
     description:
       "Del diseño CAD al fresado: así se fabrica una corona de zirconia con precisión micrométrica en el laboratorio NOVACAD.",
     src: "/images/procedimientos/novacad-video-1.mp4",
-    poster: "/images/n-img-video-1.jpg",
+    poster: "/images/webp/n-img-video-1.webp",
     duration: "PT37S",
     uploadDate: "2026-09-01T12:00:00-06:00",
   },
@@ -25,7 +25,7 @@ export const videos: VideoMeta[] = [
     description:
       "Ajuste y caracterización de una restauración E-max para lograr estética natural y función precisa.",
     src: "/images/procedimientos/novacad-video-2.mp4",
-    poster: "/images/n-img-video-2.jpg",
+    poster: "/images/webp/n-img-video-2.webp",
     duration: "PT12S",
     uploadDate: "2026-09-02T12:00:00-06:00",
   },
@@ -35,7 +35,7 @@ export const videos: VideoMeta[] = [
     description:
       "Tecnología de escaneo intraoral y diseño CAD para planificar restauraciones dentales con alta precisión y ajuste.",
     src: "/images/procedimientos/novacad-video-3.mp4",
-    poster: "/images/n-img-video-3.jpg",
+    poster: "/images/webp/n-img-video-3.webp",
     duration: "PT18S",
     uploadDate: "2026-09-03T12:00:00-06:00",
   },
@@ -45,7 +45,7 @@ export const videos: VideoMeta[] = [
     description:
       "Fabricación de estructuras dentales mediante fresado CAD/CAM de alta precisión para lograr resultados exactos y un ajuste óptimo.",
     src: "/images/procedimientos/novacad-video-4.mp4",
-    poster: "/images/n-img-video-4.jpg",
+    poster: "/images/webp/n-img-video-4.webp",
     duration: "PT23S",
     uploadDate: "2026-09-04T12:00:00-06:00",
   },
@@ -55,7 +55,7 @@ export const videos: VideoMeta[] = [
     description:
       "Trabajo de precisión sobre materiales dentales de tonalidad natural para lograr un acabado, forma y apariencia estética óptimos.",
     src: "/images/procedimientos/novacad-video-5.mp4",
-    poster: "/images/n-img-video-5.jpg",
+    poster: "/images/webp/n-img-video-5.webp",
     duration: "PT17S",
     uploadDate: "2026-09-05T12:00:00-06:00",
   },
@@ -65,7 +65,7 @@ export const videos: VideoMeta[] = [
     description:
       "Proceso de termoformado dental para adaptar materiales termoplásticos al modelo con precisión, ajuste y acabado uniforme.",
     src: "/images/procedimientos/novacad-video-6.mp4",
-    poster: "/images/n-img-video-6.jpg",
+    poster: "/images/webp/n-img-video-6.webp",
     duration: "PT21S",
     uploadDate: "2026-09-06T12:00:00-06:00",
   },
@@ -75,7 +75,7 @@ export const videos: VideoMeta[] = [
     description:
       "Gracias por su confianza y por permitirnos formar parte de su trabajo diario",
     src: "/images/procedimientos/novacad-video-7.mp4",
-    poster: "/images/n-img-video.jpg",
+    poster: "/images/webp/n-img-video.webp",
     duration: "PT8S",
     uploadDate: "2026-09-07T12:00:00-06:00",
   },

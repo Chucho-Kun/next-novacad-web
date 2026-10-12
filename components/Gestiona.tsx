@@ -6,7 +6,7 @@ const workOrderUrl = "/PDF/orden-de-trabajo-novacad.pdf";
 export default function Gestiona() {
   return (
     <section id="gestiona" aria-label="Gestiona tu trabajo">
-      <div className="flex h-63.25 items-center justify-center bg-[url('/images/fotografia-lab-03-2.jpg')] bg-cover bg-center px-[5vw] lg:h-[30vh] lg:min-h-55 lg:max-h-80 lg:px-[10vw]">
+      <div className="flex h-63.25 items-center justify-center bg-[url('/images/webp/fotografia-lab-03-2.webp')] bg-cover bg-center px-[5vw] lg:h-[30vh] lg:min-h-55 lg:max-h-80 lg:px-[10vw]">
         <a
           href={veviUrl}
           target="_blank"
@@ -18,7 +18,7 @@ export default function Gestiona() {
             <span className="sr-only">(se abre en una pestaña nueva)</span>
           </span>
           <span className="ml-22.5 self-start rounded-[20px] bg-white px-5 py-2.5 shadow-0_2px_6px_rgb(0_0_0_/_0.28) lg:ml-0 lg:self-center">
-            <Image src="/images/logo_vevi_dental.png" alt="Vevi Dental" width={367} height={130} className="h-10 w-auto" />
+            <Image src="/images/webp/logo_vevi_dental.webp" alt="Vevi Dental" width={367} height={130} className="h-10 w-auto" />
           </span>
         </a>
       </div>

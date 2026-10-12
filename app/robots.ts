@@ -11,6 +11,5 @@ export default function robots(): MetadataRoute.Robots {
       "https://novacad.com.mx/video-sitemap.xml",
       "https://novacad.com.mx/image-sitemap.xml",
     ],
-    host: "https://novacad.com.mx",
   };
 }

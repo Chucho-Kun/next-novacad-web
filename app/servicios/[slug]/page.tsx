@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale: "es_MX",
       images: [
         {
-          url: "https://novacad.com.mx/images/bg-logo-novacad-publish.jpg",
+          url: "https://novacad.com.mx/images/webp/bg-logo-novacad-publish.webp",
           width: 1200,
           height: 630,
           alt: service.alt,
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: service.metaTitle,
       description: service.metaDescription,
-      images: ["https://novacad.com.mx/images/bg-logo-novacad-publish.jpg"],
+      images: ["https://novacad.com.mx/images/webp/bg-logo-novacad-publish.webp"],
     },
   };
 }

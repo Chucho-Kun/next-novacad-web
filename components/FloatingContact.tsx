@@ -10,7 +10,7 @@ export default function FloatingContact() {
     >
       <a href="tel:+525662682487" aria-label="Llamar a NOVACAD" className="rounded-full">
         <Image
-          src="/images/n-2-icono-telefono.png"
+          src="/images/webp/n-2-icono-telefono.webp"
           alt=""
           aria-hidden="true"
           width={60}
@@ -27,7 +27,7 @@ export default function FloatingContact() {
         className="rounded-full"
       >
         <Image
-          src="/images/n-2-icono-waf.webp"
+          src="/images/webp/n-2-icono-waf.webp"
           alt=""
           aria-hidden="true"
           width={60}

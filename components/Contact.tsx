@@ -3,16 +3,16 @@ import ContactForm from "@/components/ContactForm";
 
 const socialLinks = [
   {
-    href: "https://www.facebook.com/profile.php?id=61585583129527#",
+    href: "https://www.facebook.com/profile.php?id=61585583129527",
     label: "Facebook",
-    icon: "/images/n-icono-fb.png",
+    icon: "/images/webp/n-icono-fb.webp",
   },
-  { href: "https://www.instagram.com/novacadental/", label: "Instagram", icon: "/images/n-icono-insta.png" },
-  { href: "https://www.tiktok.com/@novacad.dental", label: "TikTok", icon: "/images/n-icono-tiktok.png" },
+  { href: "https://www.instagram.com/novacadental/", label: "Instagram", icon: "/images/webp/n-icono-insta.webp" },
+  { href: "https://www.tiktok.com/@novacad.dental", label: "TikTok", icon: "/images/webp/n-icono-tiktok.webp" },
   {
     href: "https://wa.me/message/WGEHL6GIRQIVL1?src=qr",
     label: "WhatsApp",
-    icon: "/images/n-icono-wa.png",
+    icon: "/images/webp/n-icono-wa.webp",
   },
 ];
 
@@ -23,7 +23,7 @@ export default function Contact() {
       <div className="mt-11.5 flex w-[90vw] flex-wrap justify-center pb-5 lg:mt-7.5 lg:w-[80vw] lg:flex-nowrap lg:justify-start lg:pb-0">
         <div className="flex w-[90vw] items-center justify-center px-5 lg:w-[26vw] lg:justify-start">
           <Image
-            src="/images/n_logo_blanco_novacad.png"
+            src="/images/webp/n_logo_blanco_novacad.webp"
             alt="NOVACAD Laboratorios y Depósitos"
             width={500}
             height={97}
@@ -59,6 +59,9 @@ export default function Contact() {
           <address className="mb-7.5 text-base leading-5.5 not-italic">
             Cerezo 77A, Boulevares Impala, 55040, Ecatepec de Morelos, Méx, México
           </address>
+          <p className="mb-7.5 text-base leading-5.5">
+            Atendemos a odontólogos de Ecatepec, CDMX y el Estado de México.
+          </p>
 
            <h3 className="mb-3 text-xl leading-7.5 font-semibold">Síguenos</h3>
           <div className="mb-7.5 flex gap-2.5">

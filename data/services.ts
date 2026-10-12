@@ -265,7 +265,7 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "alineadores",
         title: "Alineadores Novaligner",
         href: "/servicios/alineadores",
-        image: "/images/Otros-Alineadores.jpg",
+        image: "/images/webp/Otros-Alineadores.webp",
         alt: "Alineadores dentales transparentes",
         intro: [
           "Los alineadores dentales son dispositivos transparentes removibles diseñados para corregir la posición dental de manera progresiva y controlada.",
@@ -322,8 +322,8 @@ export const serviceCategories: ServiceCategory[] = [
         slug: "resina-hibrida-permanente",
         title: "Resina Híbrida - Prótesis Permanentes",
         href: "/servicios/resina-hibrida-permanente",
-        image: "/images/nuevo-producto/slide-resina-hibrida.jpg",
-        detailImage: "/images/nuevo-producto/page-resina-hibrida.jpg",
+        image: "/images/nuevo-producto/slide-resina-hibrida.webp",
+        detailImage: "/images/nuevo-producto/page-resina-hibrida.webp",
         alt: "Prótesis permanente de resina híbrida Bio Crown Diamond",
         intro: [
           "Bio Crown Diamond es una resina de alta tecnología para impresión 3D dental, desarrollada para la fabricación de restauraciones permanentes con excelente resistencia y biocompatibilidad.",
