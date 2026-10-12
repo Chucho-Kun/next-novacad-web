@@ -14,9 +14,9 @@
 
 ## Architecture
 - Next.js 16.3.6 + React 19.2.8 + TypeScript 5 + Tailwind CSS 4. App Router, no `src/` or `pages/`.
-- Routes: `/` (`app/page.tsx` section composition: `Header` → `FloatingContact` → `Hero` → `WhyChoose` → `About` → `Services` → `Gestiona` → `ComoEmpacar` → `Procedimientos` → `Testimonials` → `Contact` → `Footer`, plus `JsonLd` schema blocks) · `/servicios/[slug]` (`app/servicios/[slug]/page.tsx`, static via `generateStaticParams` from `data/services.ts`) · `POST /api/contact` (`app/api/contact/route.ts`, `runtime = "nodejs"`) · `sitemap.ts` + `robots.ts`.
-- Canonical domain `https://novacad.com.mx` is hard-coded in `app/layout.tsx:20` (`metadataBase`), `app/page.tsx:17`, `app/sitemap.ts:5`, `app/robots.ts:9`, `app/servicios/[slug]/page.tsx:31` — keep all in sync.
-- Data layer: `data/services.ts` (drives home sections, sitemap, JSON-LD, `[slug]` pages — `slug`/`href` changes break URLs), `data/testimonials.ts`, `data/procedures.ts`, `data/why-choose.ts`. Static content, Spanish (`es-MX`).
+- Routes: `/` (`app/page.tsx` section composition: `Header` → `FloatingContact` → `Hero` → `WhyChoose` → `About` → `Services` → `Gestiona` → `ComoEmpacar` → `Procedimientos` → `Testimonials` → `Contact` → `Footer`, plus `JsonLd` schema blocks) · `/servicios/[slug]` (`app/servicios/[slug]/page.tsx`, static via `generateStaticParams` from `data/services.ts`) · `/videos` + `/videos/[id]` (`app/videos/`) · `POST /api/contact` (`app/api/contact/route.ts`, `runtime = "nodejs"`) · `sitemap.ts` + `image-sitemap.xml/` + `video-sitemap.xml/` + `robots.ts` (robots lists all three sitemaps).
+- Canonical domain `https://novacad.com.mx` is hard-coded in `app/layout.tsx` (`metadataBase`), `app/page.tsx`, `app/sitemap.ts`, `app/robots.ts`, `app/servicios/[slug]/page.tsx` — keep all in sync.
+- Data layer: `data/services.ts` (drives home sections, sitemap, JSON-LD, `[slug]` pages — `slug`/`href` changes break URLs), `data/testimonials.ts`, `data/procedures.ts`, `data/why-choose.ts`, `data/videos.ts`, `data/images.ts`, `data/como-empacar.ts`. Static content, Spanish (`es-MX`).
 - Path alias `@/*` → `./*`; `lib/utils.ts:4` exports `cn()` (`clsx` + `tailwind-merge`); `lib/validations/contact.ts:3` exports `contactSchema` shared by client form and API route.
 - Only 5 `"use client"` components: `ContactForm`, `MobileNav`, `ServiceCategoryCard`, `TestimonialCarousel`, `VideoPlaylist`. `Gallery` is a presentational child of `VideoPlaylist`. Keep `app/page.tsx` a server component.
 - `next.config.ts` is empty — add options there. Never edit `next-env.d.ts` or `.next/**` (both gitignored / generated).
@@ -34,7 +34,7 @@
 - Layout helpers in `app/globals.css:76`: `.site-container` (`min(80vw,1536px)`, `90vw` mobile) and `[id]{scroll-margin-top:8rem}` with per-section overrides (`#quienes-somos:15rem`, `#servicios:0`, `#galeria:0`) — reuse, don't reinvent.
 
 ## Conventions
-- `specs/` holds numbered implementation-history `.md` files + `.spec-config.yml` — reference only, not live code.
+- `specs/` holds numbered implementation-history `.md` files + `.spec-config.yml` — reference only, not live code. Active spec workflow lives in `openspec/` (`changes/` + `specs/`); project constraints for artifacts are in `openspec/config.yaml` — read it before proposing changes.
 - Fonts: Montserrat via `next/font/google`, Agency via local `app/fonts/agencyb.ttf:13` (`weight:700` only).
 - SEO pattern: per-page `generateMetadata` with canonical + OG/Twitter images + `JsonLd` component (`Organization`/`WebSite`/`ItemList` on home, `BreadcrumbList`/`Service` on `[slug]`).
 - GTM: `<GoogleTagManager>` from `@next/third-parties/google` in `app/layout.tsx` (injects both head script + body noscript — never paste GTM snippets manually). Container ID comes from `NEXT_PUBLIC_GTM_ID`; if unset, GTM simply doesn't render.
