@@ -57,7 +57,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
   return (
-    <html lang="es-MX" className={`${montserrat.variable} ${agency.variable} h-full antialiased`}>
+    <html lang="es-MX" className={`${montserrat.variable} ${agency.variable} h-full antialiased`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       {gtmId ? <GoogleTagManager gtmId={gtmId} /> : null}
       <body className="flex min-h-full flex-col">{children}</body>
     </html>

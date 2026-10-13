@@ -12,6 +12,7 @@ import Contact from "@/components/Contact";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import Reveal from "@/components/Reveal";
 import { serviceCategories } from "@/data/services";
 import { faqs } from "@/data/faqs";
 
@@ -101,15 +102,33 @@ export default function Home() {
         <FloatingContact />
         <main id="contenido" className="flex-1">
           <Hero />
-          <WhyChoose />
-          <About />
-          <Services />
-          <Gestiona />
-          <ComoEmpacar />
-          <Procedimientos />
-          <Testimonials />
-          <Faq />
-          <Contact />
+          <Reveal>
+            <WhyChoose />
+          </Reveal>
+          <Reveal>
+            <About />
+          </Reveal>
+          <Reveal>
+            <Services />
+          </Reveal>
+          <Reveal>
+            <Gestiona />
+          </Reveal>
+          <Reveal>
+            <ComoEmpacar />
+          </Reveal>
+          <Reveal>
+            <Procedimientos />
+          </Reveal>
+          <Reveal>
+            <Testimonials />
+          </Reveal>
+          <Reveal>
+            <Faq />
+          </Reveal>
+          <Reveal>
+            <Contact />
+          </Reveal>
         </main>
         <Footer />
       </div>
