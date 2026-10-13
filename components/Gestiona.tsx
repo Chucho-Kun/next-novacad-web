@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const veviUrl = "https://www.vevidental.com/novacad";
-const workOrderUrl = "/PDF/orden-de-trabajo-novacad.pdf";
+const workOrderUrl = "/documents/orden-de-trabajo-novacad-2026.pdf";
 
 export default function Gestiona() {
   return (

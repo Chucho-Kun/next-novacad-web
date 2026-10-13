@@ -112,7 +112,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         <div className="mx-auto flex w-[90vw] items-center py-4 lg:w-[80vw] lg:py-5">
           <Link
             href="/"
-            className="inline-flex min-h-[44px] items-center justify-center rounded-[10px] bg-white px-6 py-2 text-sm font-semibold text-brand-deep transition-colors hover:bg-brand-light focus-visible:outline-white lg:text-base"
+            className="inline-flex min-h-11 items-center justify-center rounded-[10px] bg-white px-6 py-2 text-sm font-semibold text-brand-deep transition-colors hover:bg-brand-light focus-visible:outline-white lg:text-base"
           >
             Regresar
           </Link>
@@ -152,15 +152,15 @@ export default async function ServiceDetailPage({ params }: Props) {
                 href="https://wa.me/message/WGEHL6GIRQIVL1?src=qr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-[10px] bg-brand-cyan px-8 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-brand-blue focus-visible:outline-brand-cyan"
+                className="inline-flex min-h-11 items-center justify-center rounded-[10px] bg-brand-cyan px-8 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-brand-blue focus-visible:outline-brand-cyan"
               >
                 Agenda una cita
               </a>
               <a
-                href="https://drive.google.com/file/d/1TmrkULEnk59rYrwj4g8cKrSS9s8Q4UzE/view"
+                href="/documents/orden-de-trabajo-novacad-2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-[10px] border-2 border-brand-deep bg-white px-8 py-3 text-center text-base font-semibold text-brand-deep transition-colors hover:bg-brand-light focus-visible:outline-brand-deep"
+                className="inline-flex min-h-11 items-center justify-center rounded-[10px] border-2 border-brand-deep bg-white px-8 py-3 text-center text-base font-semibold text-brand-deep transition-colors hover:bg-brand-light focus-visible:outline-brand-deep"
               >
                 Orden de trabajo
               </a>

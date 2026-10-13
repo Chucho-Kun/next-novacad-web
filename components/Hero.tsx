@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-const priceListUrl = "https://drive.google.com/file/d/1PPoYiu9yjx-gO9PaDCmsOGz6u8TraAFE/view";
+const priceListUrl = "/documents/lista-de-precios-novacad-2026.pdf"
+// "https://drive.google.com/file/d/1PPoYiu9yjx-gO9PaDCmsOGz6u8TraAFE/view";
 const whatsappUrl = "https://wa.me/message/WGEHL6GIRQIVL1?src=qr";
 
 export default function Hero() {
