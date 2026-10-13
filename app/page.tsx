@@ -123,9 +123,9 @@ export default function Home() {
           <Reveal>
             <Testimonials />
           </Reveal>
-          <Reveal>
+          {/* <Reveal>
             <Faq />
-          </Reveal>
+          </Reveal> */}
           <Reveal>
             <Contact />
           </Reveal>
